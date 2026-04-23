@@ -1982,6 +1982,21 @@ document.addEventListener('DOMContentLoaded',function(){
   document.getElementById('btn-admin-close').addEventListener('click',closeAdmin);
   document.getElementById('btn-gen-codes').addEventListener('click',generateCodes);
   document.getElementById('btn-copy-codes').addEventListener('click',copyAllCodes);
+  document.getElementById('btn-clear-stats').addEventListener('click',function(){
+    if(!confirm('确认清除全部统计数据？（测试次数、职位分布、解锁/分享记录）\n解锁码不会被清除。')) return;
+    try{
+      localStorage.removeItem('lq_total_tests');
+      localStorage.removeItem('lq_total_unlocked');
+      localStorage.removeItem('lq_total_shares');
+      localStorage.removeItem('lq_char_dist');
+      localStorage.removeItem('lq_share');
+      localStorage.removeItem('lq_ans');
+      localStorage.removeItem('lq_cur');
+      localStorage.removeItem('lq_cd_end');
+    }catch(e){}
+    refreshAdminStats();
+    showToast('统计数据已清除 ✓', 2000);
+  });
   initParticles();
   initSwipe();
   // animate social proof counter
@@ -2074,7 +2089,7 @@ function openShareCard(ch){
 // ── Admin panel ────────────────────────────────────────
 var ADMIN_PASS='admin888';
 var adminCodes=[];
-try{adminCodes=JSON.parse(localStorage.getItem('lq_admin_codes')||'["LIT001"]');}catch(e){adminCodes=['LIT001'];}
+try{adminCodes=JSON.parse(localStorage.getItem('lq_admin_codes')||'["PAL001"]');}catch(e){adminCodes=['PAL001'];}
 
 function saveAdminCodes(){try{localStorage.setItem('lq_admin_codes',JSON.stringify(adminCodes));}catch(e){}}
 
@@ -2369,6 +2384,11 @@ function confirmPayCode(){
       <button class="code-gen-btn" id="btn-copy-codes">复制全部</button>
     </div>
     <div class="codes-list" id="adm-codes-list">点击"批量生成"创建解锁码</div>
+  </div>
+  <div class="code-gen-section" style="padding-top:0">
+    <div class="admin-section-title" style="margin-bottom:10px">数据管理</div>
+    <button class="code-gen-btn" id="btn-clear-stats" style="width:100%;background:#8b2020;margin-bottom:6px">清除全部统计数据（旧版残留时使用）</button>
+    <div style="font-size:11px;color:var(--muted);font-family:'Noto Sans SC',sans-serif">清除后计数归零，不影响解锁码</div>
   </div>
 </div>
 
