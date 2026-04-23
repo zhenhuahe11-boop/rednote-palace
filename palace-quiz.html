@@ -1,0 +1,2376 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>前世你在宫中是何职位？</title>
+<meta property="og:title" content="前世你在宫中是何职位？">
+<meta property="og:description" content="10道题揭开前世宫中身份——皇后、谋士、侍卫、太监总管？免费测试，付费解锁深度报告">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://via.placeholder.com/1200x630/0e0b06/b8933f?text=%E5%89%8D%E4%B8%96%E4%BD%A0%E5%9C%A8%E5%AE%AB%E4%B8%AD%E6%98%AF%E4%BD%95%E8%81%8C%E4%BD%8D%EF%BC%9F">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500&display=swap');
+
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{
+  --ink:#1a1008;
+  --ink2:#3d2b1a;
+  --silk:#f5f0e8;
+  --silk2:#ede5d4;
+  --silk3:#e4d8c4;
+  --zhu:#c0392b;
+  --zhu2:#e74c3c;
+  --zhu-pale:#fdf0ee;
+  --gold:#b8860b;
+  --gold2:#d4a017;
+  --gold-pale:#fdf8ec;
+  --mo:#2c1810;
+  --muted:#7a5c44;
+  --border:#d4c4a8;
+  --border2:#c4b090;
+  --shadow:rgba(28,16,8,0.12);
+}
+html,body{height:100%;background:#2c1810;font-family:'Noto Sans SC',sans-serif}
+
+/* ─── PAPER TEXTURE OVERLAY ─── */
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity:0.5;
+}
+
+/* ─── APP WRAPPER ─── */
+#app{
+  max-width:420px;margin:0 auto;
+  min-height:100vh;position:relative;overflow:hidden;
+}
+
+.screen{display:none;flex-direction:column;min-height:100vh}
+.screen.active{display:flex}
+#screen-quiz{min-height:100vh;height:100vh;min-height:100dvh;height:100dvh;overflow:hidden}
+
+/* ════════ COVER ════════ */
+#screen-cover{
+  background:var(--silk);
+  position:relative;justify-content:space-between;align-items:center;
+  overflow:hidden;
+}
+
+/* Decorative ink wash background */
+#screen-cover::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 120% 60% at 110% 15%, rgba(192,57,43,0.07) 0%, transparent 55%),
+    radial-gradient(ellipse 80% 80% at -10% 90%, rgba(184,134,11,0.06) 0%, transparent 50%),
+    linear-gradient(180deg, var(--silk) 0%, #ede5d0 100%);
+}
+
+/* Vertical bamboo lines decoration */
+.cover-decor-lines{
+  position:absolute;top:0;right:24px;bottom:0;width:1px;
+  background:linear-gradient(180deg,transparent,rgba(192,57,43,0.12) 20%,rgba(192,57,43,0.12) 80%,transparent);
+}
+.cover-decor-lines::before{
+  content:'';position:absolute;top:0;right:18px;bottom:0;width:1px;
+  background:linear-gradient(180deg,transparent,rgba(192,57,43,0.06) 25%,rgba(192,57,43,0.06) 75%,transparent);
+}
+
+.cover-content{
+  position:relative;z-index:1;
+  width:100%;padding:52px 32px 36px;
+  flex:1;display:flex;flex-direction:column;justify-content:center;
+}
+
+/* Seal stamp decoration */
+.cover-seal{
+  width:44px;height:44px;border:2px solid var(--zhu);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:28px;
+  font-family:'Noto Serif SC',serif;font-size:12px;
+  color:var(--zhu);letter-spacing:0.05em;font-weight:700;
+  position:relative;
+}
+.cover-seal::before{
+  content:'';position:absolute;inset:3px;border:1px solid var(--zhu);opacity:0.4;
+}
+
+.cover-eyebrow{
+  font-size:10px;letter-spacing:0.5em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:20px;
+  display:flex;align-items:center;gap:10px;
+  font-family:'Noto Sans SC',sans-serif;font-weight:300;
+}
+.cover-eyebrow::after{
+  content:'';flex:1;height:0.5px;background:linear-gradient(90deg,var(--border),transparent);
+}
+
+.cover-title{
+  font-family:'Noto Serif SC',serif;
+  font-size:2.8rem;font-weight:900;
+  color:var(--ink);line-height:1.2;
+  margin-bottom:8px;
+  letter-spacing:0.02em;
+}
+.cover-title span{
+  color:var(--zhu);
+  position:relative;
+  display:inline-block;
+}
+.cover-title span::after{
+  content:'';position:absolute;bottom:2px;left:0;right:0;height:2px;
+  background:var(--zhu);opacity:0.3;
+}
+
+.cover-subtitle{
+  font-size:12px;color:var(--muted);
+  letter-spacing:0.2em;margin-bottom:32px;
+  font-family:'Noto Sans SC',sans-serif;font-weight:300;
+}
+
+/* Ink brush divider */
+.cover-divider{
+  display:flex;align-items:center;gap:0;margin-bottom:24px;height:16px;
+}
+.cover-divider-line{
+  flex:1;height:1px;
+  background:linear-gradient(90deg,transparent,var(--border2),transparent);
+}
+.cover-divider-diamond{
+  width:6px;height:6px;background:var(--zhu);
+  transform:rotate(45deg);margin:0 12px;
+  flex-shrink:0;
+}
+
+.cover-desc{
+  font-size:14px;color:var(--ink2);
+  line-height:2;margin-bottom:40px;
+  font-family:'Noto Sans SC',sans-serif;
+}
+
+.cover-meta{
+  display:flex;gap:0;margin-bottom:36px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,0.4);
+}
+.cover-meta-item{
+  flex:1;padding:10px 4px;text-align:center;
+  font-size:11px;color:var(--muted);letter-spacing:0.08em;
+  border-right:1px solid var(--border);
+  font-family:'Noto Sans SC',sans-serif;
+}
+.cover-meta-item:last-child{border-right:none}
+.cover-meta-item strong{display:block;font-size:14px;color:var(--ink);font-weight:600;margin-bottom:2px}
+
+.start-btn{
+  width:100%;padding:15px;
+  background:var(--zhu);
+  color:#fff;border:none;
+  font-family:'Noto Serif SC',serif;font-size:15px;font-weight:700;
+  letter-spacing:0.3em;cursor:pointer;
+  position:relative;overflow:hidden;
+  transition:background 0.2s,transform 0.15s;
+}
+.start-btn::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(255,255,255,0.12) 0%,transparent 60%);
+  pointer-events:none;
+}
+.start-btn:hover{background:#a93226;transform:translateY(-1px)}
+.start-btn:active{transform:translateY(0)}
+
+/* shimmer on start btn */
+@keyframes silk-shimmer{0%,100%{opacity:1}50%{opacity:0.85}}
+.start-btn{animation:silk-shimmer 3s ease infinite}
+
+.cover-footer{
+  padding:16px 32px 32px;
+  font-size:11px;color:var(--muted);
+  text-align:center;letter-spacing:0.05em;
+  position:relative;z-index:1;opacity:0.6;
+}
+
+/* ════════ QUIZ ════════ */
+#screen-quiz{background:var(--silk);padding:0}
+
+.quiz-header{
+  padding:14px 20px 12px;
+  background:var(--silk);
+  border-bottom:1px solid var(--border);
+  position:sticky;top:0;z-index:10;flex-shrink:0;
+}
+.quiz-header-top{
+  display:flex;justify-content:space-between;align-items:center;
+  margin-bottom:10px;
+}
+.q-counter{font-size:11px;color:var(--muted);letter-spacing:0.1em;font-family:'Noto Sans SC',sans-serif}
+.q-pct{font-size:12px;font-weight:600;color:var(--zhu);font-family:'Noto Serif SC',serif}
+
+.prog-track{height:2px;background:var(--border);overflow:hidden}
+.prog-fill{
+  height:100%;
+  background:linear-gradient(90deg,var(--zhu),var(--zhu2));
+  transition:width 0.5s cubic-bezier(.4,0,.2,1);
+}
+
+.quiz-body{
+  padding:24px 24px 8px;flex:1;
+  overflow-y:auto;-webkit-overflow-scrolling:touch;
+  display:flex;flex-direction:column;
+}
+
+.q-num{
+  font-size:10px;letter-spacing:0.4em;color:var(--zhu);
+  text-transform:uppercase;margin-bottom:12px;font-weight:500;
+  display:flex;align-items:center;gap:8px;
+  font-family:'Noto Sans SC',sans-serif;
+}
+.q-num::before{
+  content:'';width:16px;height:1px;background:var(--zhu);opacity:0.5;
+}
+
+.q-text{
+  font-family:'Noto Serif SC',serif;
+  font-size:17px;font-weight:700;
+  color:var(--ink);line-height:1.7;
+  margin-bottom:20px;
+}
+
+.options{display:flex;flex-direction:column;gap:8px}
+
+.opt{
+  border:1px solid var(--border);
+  background:rgba(255,255,255,0.6);
+  padding:13px 16px;
+  cursor:pointer;
+  display:flex;align-items:flex-start;gap:12px;
+  transition:all 0.18s cubic-bezier(.2,.8,.3,1);
+  font-size:13.5px;color:var(--ink2);line-height:1.7;
+  text-align:left;width:100%;
+  font-family:'Noto Sans SC',sans-serif;
+  position:relative;overflow:hidden;
+}
+.opt::after{
+  content:'';position:absolute;bottom:0;left:0;width:0;height:1.5px;
+  background:var(--zhu);transition:width 0.3s ease;
+}
+.opt:hover{border-color:var(--zhu);background:var(--zhu-pale)}
+.opt:hover::after{width:100%}
+.opt.selected{
+  border-color:var(--zhu);
+  background:var(--zhu-pale);
+}
+.opt.selected::after{width:100%}
+.opt:active{transform:scale(0.99)}
+
+.opt-badge{
+  min-width:22px;height:22px;
+  border:1px solid var(--border2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:10px;font-weight:600;color:var(--muted);
+  flex-shrink:0;margin-top:1px;
+  transition:all 0.18s;
+  font-family:'Noto Serif SC',serif;
+}
+.opt.selected .opt-badge{
+  background:var(--zhu);border-color:var(--zhu);color:#fff;
+}
+
+.quiz-footer{
+  padding:12px 20px 20px;
+  display:flex;justify-content:space-between;gap:12px;
+  flex-shrink:0;
+  border-top:1px solid var(--border);
+  background:var(--silk);
+}
+.nav-btn{
+  flex:1;padding:12px;
+  font-family:'Noto Sans SC',sans-serif;font-size:13px;
+  cursor:pointer;transition:all 0.15s;letter-spacing:0.08em;
+}
+.btn-back{
+  background:transparent;border:1px solid var(--border);
+  color:var(--muted);
+}
+.btn-back:hover{background:var(--silk2)}
+.btn-next{
+  background:var(--ink);border:none;color:var(--silk);
+  font-weight:500;
+}
+.btn-next:hover{background:#3d2000}
+.btn-next:disabled{background:var(--border);color:#aaa;cursor:not-allowed}
+.btn-next.last{background:var(--zhu);color:#fff}
+.btn-next.last:hover{background:#a93226}
+
+/* ════════ LOADING ════════ */
+#screen-loading{
+  background:var(--silk);
+  justify-content:center;align-items:center;
+  flex-direction:column;gap:20px;
+  position:relative;overflow:hidden;
+}
+#screen-loading::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 50% at 50% 40%,rgba(192,57,43,0.05) 0%,transparent 70%);
+}
+.loading-book{
+  font-size:52px;margin-bottom:8px;
+  animation:scroll-float 2.5s ease-in-out infinite;
+  filter:drop-shadow(0 4px 12px rgba(192,57,43,0.2));
+}
+@keyframes scroll-float{
+  0%,100%{transform:translateY(0) rotate(-1deg)}
+  50%{transform:translateY(-10px) rotate(1deg)}
+}
+.loading-text{
+  font-family:'Noto Serif SC',serif;
+  font-size:15px;color:var(--ink2);
+  letter-spacing:0.25em;
+  animation:fade-pulse 1.5s ease infinite;
+}
+@keyframes fade-pulse{0%,100%{opacity:0.5}50%{opacity:1}}
+.loading-dots{display:flex;gap:8px;margin-top:4px}
+.dot{
+  width:5px;height:5px;background:var(--zhu);
+  animation:dot-bounce 1.2s ease infinite;
+}
+.dot:nth-child(2){animation-delay:0.2s}
+.dot:nth-child(3){animation-delay:0.4s}
+@keyframes dot-bounce{0%,80%,100%{transform:scale(0.6);opacity:0.3}40%{transform:scale(1.2);opacity:1}}
+
+/* ════════ RESULT ════════ */
+#screen-result{background:var(--silk);padding-bottom:40px}
+
+.res-hero{
+  position:relative;padding:48px 28px 36px;
+  background:var(--ink);
+  overflow:hidden;
+}
+/* Ink wash texture on hero */
+.res-hero::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 80% 60% at 30% 0%,rgba(192,57,43,0.18) 0%,transparent 55%),
+    radial-gradient(ellipse 60% 80% at 90% 100%,rgba(184,134,11,0.1) 0%,transparent 50%);
+}
+/* Decorative corner marks */
+.res-hero::after{
+  content:'';position:absolute;top:16px;left:16px;
+  width:24px;height:24px;
+  border-top:2px solid rgba(192,57,43,0.4);
+  border-left:2px solid rgba(192,57,43,0.4);
+}
+.res-hero-glow{
+  position:absolute;top:-60px;right:-30px;
+  width:200px;height:200px;
+  background:radial-gradient(circle,rgba(192,57,43,0.12) 0%,transparent 70%);
+  pointer-events:none;
+}
+
+/* Bottom right corner mark */
+.res-hero-corner{
+  position:absolute;bottom:16px;right:16px;
+  width:24px;height:24px;
+  border-bottom:2px solid rgba(192,57,43,0.4);
+  border-right:2px solid rgba(192,57,43,0.4);
+}
+
+.res-badge{
+  display:inline-block;
+  padding:4px 14px;
+  border:1px solid rgba(192,57,43,0.5);
+  font-size:10px;letter-spacing:0.3em;
+  color:rgba(192,57,43,0.85);
+  margin-bottom:16px;
+  font-family:'Noto Sans SC',sans-serif;
+  background:rgba(192,57,43,0.08);
+}
+
+.res-name{
+  font-family:'Noto Serif SC',serif;
+  font-size:3.2rem;font-weight:900;
+  color:#f5ead0;line-height:1.1;
+  margin-bottom:6px;
+  text-shadow:0 2px 20px rgba(0,0,0,0.3);
+}
+.res-origin{
+  font-size:11px;color:rgba(245,234,208,0.4);
+  letter-spacing:0.15em;margin-bottom:20px;
+  font-family:'Noto Sans SC',sans-serif;
+}
+.res-tagline{
+  font-family:'Noto Serif SC',serif;
+  font-size:13px;color:rgba(245,234,208,0.7);
+  line-height:1.9;font-style:italic;
+  padding-left:14px;
+  border-left:2px solid var(--zhu);
+}
+
+.result-score-wrap{
+  position:absolute;top:16px;right:16px;
+  border:1px solid rgba(192,57,43,0.3);
+  padding:4px 12px;
+  font-size:11px;color:rgba(245,234,208,0.55);
+  font-family:'Noto Serif SC',serif;
+  background:rgba(192,57,43,0.1);
+}
+.char-emoji{font-size:30px;margin-bottom:10px;display:block}
+
+.res-body{padding:24px 24px 0;background:var(--silk)}
+.res-section{margin-bottom:28px}
+.res-section-title{
+  font-size:10px;letter-spacing:0.4em;color:var(--zhu);
+  text-transform:uppercase;margin-bottom:14px;font-weight:500;
+  display:flex;align-items:center;gap:8px;
+  font-family:'Noto Sans SC',sans-serif;
+}
+.res-section-title::before{
+  content:'';width:3px;height:3px;background:var(--zhu);transform:rotate(45deg);flex-shrink:0;
+}
+
+.trait-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.trait-card{
+  background:#fff;
+  border:1px solid var(--border);
+  padding:12px 14px;
+}
+.trait-lbl{font-size:10px;color:var(--muted);margin-bottom:4px;letter-spacing:0.05em}
+.trait-val{font-size:13px;font-weight:600;color:var(--ink);font-family:'Noto Serif SC',serif}
+
+.res-desc-preview{
+  font-size:14px;color:var(--ink2);
+  line-height:1.95;position:relative;
+  font-family:'Noto Sans SC',sans-serif;
+}
+.res-desc-preview p{margin-bottom:12px}
+.res-blur-overlay{
+  position:absolute;bottom:0;left:0;right:0;height:80px;
+  background:linear-gradient(transparent,var(--silk));
+  display:flex;align-items:flex-end;justify-content:center;
+  padding-bottom:4px;
+}
+.res-blur-label{font-size:11px;color:var(--zhu);letter-spacing:0.1em;opacity:0.7}
+
+/* ─── PAYWALL ─── */
+.paywall{
+  margin:0 24px 24px;
+  background:#fff;
+  border:1px solid var(--border);
+}
+.countdown-bar{
+  background:rgba(192,57,43,0.06);
+  border:1px solid rgba(192,57,43,0.2);
+  padding:10px 14px;
+  display:flex;align-items:center;gap:10px;
+  margin-bottom:0;
+}
+.cd-icon{font-size:13px}
+.cd-text{font-size:12px;color:var(--ink2);flex:1;font-family:'Noto Sans SC',sans-serif}
+.cd-time{font-size:14px;font-weight:700;color:var(--zhu);font-family:'Noto Serif SC',serif;min-width:50px;text-align:right}
+.share-unlock{
+  background:var(--gold-pale);
+  border-bottom:1px solid var(--border);
+  padding:16px;
+}
+.share-unlock-title{
+  font-size:13px;font-weight:600;color:var(--ink);
+  margin-bottom:4px;display:flex;align-items:center;gap:6px;
+  font-family:'Noto Serif SC',serif;
+}
+.share-unlock-sub{font-size:12px;color:var(--muted);margin-bottom:12px;line-height:1.6;font-family:'Noto Sans SC',sans-serif}
+.share-steps{display:flex;gap:6px;margin-bottom:12px}
+.share-step{
+  flex:1;text-align:center;padding:8px 4px;
+  background:#fff;border:1px solid var(--border);
+  font-size:11px;color:var(--ink2);line-height:1.6;
+  font-family:'Noto Sans SC',sans-serif;
+}
+.share-step strong{display:block;font-size:15px;font-weight:700;color:var(--gold);font-family:'Noto Serif SC',serif}
+.share-progress-row{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:6px}
+.share-prog-track{height:3px;background:var(--border);margin-bottom:12px}
+.share-prog-fill{height:100%;background:var(--gold);transition:width 0.4s}
+.share-btn{
+  width:100%;padding:11px;
+  background:var(--ink);color:var(--silk);border:none;
+  font-size:13px;cursor:pointer;letter-spacing:0.12em;
+  font-family:'Noto Sans SC',sans-serif;
+  transition:background 0.15s;
+}
+.share-btn:hover{background:#3d2000}
+.paywall-top{
+  padding:24px 20px 18px;text-align:center;
+  border-bottom:1px solid var(--border);
+}
+.paywall-lock{
+  width:36px;height:36px;
+  background:var(--zhu-pale);
+  border:1px solid rgba(192,57,43,0.3);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 14px;font-size:16px;
+}
+.paywall-title{
+  font-family:'Noto Serif SC',serif;
+  font-size:17px;font-weight:700;color:var(--ink);
+  margin-bottom:6px;
+}
+.paywall-sub{font-size:12px;color:var(--muted);line-height:1.7;font-family:'Noto Sans SC',sans-serif}
+.paywall-features{padding:16px 20px}
+.feature-item{
+  display:flex;align-items:center;gap:10px;
+  padding:8px 0;border-bottom:1px solid var(--border);
+  font-size:13px;color:var(--ink2);
+  font-family:'Noto Sans SC',sans-serif;
+}
+.feature-item:last-child{border:none}
+.feature-dot{
+  width:5px;height:5px;background:var(--zhu);
+  transform:rotate(45deg);flex-shrink:0;
+}
+.paywall-cta{padding:16px 20px 20px}
+.price-row{
+  display:flex;align-items:baseline;gap:6px;margin-bottom:14px;
+  justify-content:center;
+}
+.price-main{
+  font-family:'Noto Serif SC',serif;
+  font-size:2.2rem;font-weight:700;color:var(--zhu);
+}
+.price-unit{font-size:12px;color:var(--muted)}
+.price-original{font-size:12px;color:var(--muted);text-decoration:line-through}
+.unlock-btn{
+  width:100%;padding:15px;
+  background:var(--zhu);
+  color:#fff;border:none;
+  font-family:'Noto Serif SC',serif;font-size:15px;font-weight:700;
+  letter-spacing:0.2em;cursor:pointer;
+  transition:background 0.15s,transform 0.15s;
+  margin-bottom:10px;
+}
+.unlock-btn:hover{background:#a93226;transform:translateY(-1px)}
+.unlock-hint{
+  text-align:center;font-size:11px;color:var(--muted);
+  letter-spacing:0.05em;font-family:'Noto Sans SC',sans-serif;
+}
+.paywall-social{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  padding:8px 0 4px;font-size:11px;color:var(--muted);
+  font-family:'Noto Sans SC',sans-serif;
+}
+
+/* ─── FULL REPORT ─── */
+.full-report{display:none;padding:0 24px 32px;background:var(--silk)}
+.report-section{margin-bottom:32px}
+.report-section-title{
+  font-size:10px;letter-spacing:0.4em;color:var(--zhu);
+  text-transform:uppercase;margin-bottom:14px;font-weight:500;
+  display:flex;align-items:center;gap:8px;
+  font-family:'Noto Sans SC',sans-serif;
+  padding-top:24px;
+  border-top:1px solid var(--border);
+}
+.report-section-title::before{
+  content:'';width:3px;height:3px;background:var(--zhu);transform:rotate(45deg);flex-shrink:0;
+}
+.dim-item{margin-bottom:14px}
+.dim-row{
+  display:flex;justify-content:space-between;
+  font-size:11px;color:var(--muted);margin-bottom:6px;
+  font-family:'Noto Sans SC',sans-serif;
+}
+.dim-track{height:2px;background:var(--border);overflow:hidden}
+.dim-fill{height:100%;background:linear-gradient(90deg,var(--zhu),var(--zhu2));transition:width 1s ease}
+
+.advice-card{
+  background:#fff;border:1px solid var(--border);
+  padding:16px;margin-bottom:10px;
+  border-left:3px solid var(--zhu);
+}
+.advice-head{
+  font-size:13px;font-weight:600;color:var(--ink);
+  margin-bottom:6px;font-family:'Noto Serif SC',serif;
+}
+.advice-body{font-size:13px;color:var(--ink2);line-height:1.85;font-family:'Noto Sans SC',sans-serif}
+
+.peer-row{display:flex;gap:8px;flex-wrap:wrap}
+.peer-tag{
+  padding:5px 12px;
+  border:1px solid var(--border2);
+  font-size:12px;color:var(--ink2);
+  font-family:'Noto Serif SC',serif;
+  background:#fff;
+}
+.full-desc{
+  font-size:14px;color:var(--ink2);
+  line-height:2;font-family:'Noto Sans SC',sans-serif;
+}
+.full-desc p{margin-bottom:14px}
+
+/* Compat chart */
+.compat-item{
+  display:flex;align-items:center;gap:10px;
+  margin-bottom:10px;
+}
+.compat-name{font-size:12px;color:var(--muted);width:52px;flex-shrink:0;font-family:'Noto Serif SC',serif}
+.compat-track{flex:1;height:3px;background:var(--border);overflow:hidden}
+.compat-fill{height:100%;width:0%;transition:width 1s ease}
+.compat-pct{font-size:11px;color:var(--muted);width:34px;text-align:right;font-family:'Noto Sans SC',sans-serif}
+
+/* Book items */
+.book-item{
+  display:flex;align-items:flex-start;gap:12px;
+  padding:12px 0;border-bottom:1px solid var(--border);
+}
+.book-item:last-child{border-bottom:none}
+.book-num{
+  width:22px;height:22px;
+  background:var(--zhu);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:700;flex-shrink:0;
+  font-family:'Noto Serif SC',serif;
+}
+.book-info{}
+.book-title{font-size:13px;font-weight:600;color:var(--ink);margin-bottom:3px;font-family:'Noto Serif SC',serif}
+.book-reason{font-size:12px;color:var(--muted);line-height:1.5;font-family:'Noto Sans SC',sans-serif}
+
+/* Share strip */
+.share-strip{
+  background:var(--gold-pale);border:1px solid var(--border);
+  padding:16px;text-align:center;margin-top:8px;
+}
+.share-strip p{font-size:12px;color:var(--ink2);line-height:1.7;font-family:'Noto Sans SC',sans-serif}
+.share-strip strong{color:var(--ink);font-weight:600}
+
+.retry-row{padding:0 24px;margin-top:8px}
+.retry-btn-full{
+  width:100%;padding:13px;
+  background:transparent;border:1px solid var(--border2);
+  color:var(--muted);font-size:13px;cursor:pointer;
+  letter-spacing:0.1em;font-family:'Noto Sans SC',sans-serif;
+  transition:all 0.15s;
+}
+.retry-btn-full:hover{background:var(--silk2);color:var(--ink)}
+
+/* ─── MODAL ─── */
+.modal-bg{
+  display:none;position:fixed;inset:0;
+  background:rgba(28,16,8,0.6);z-index:100;
+  align-items:center;justify-content:center;padding:24px;
+}
+.modal-bg.open{display:flex}
+.modal{
+  background:var(--silk);border:1px solid var(--border2);
+  width:100%;max-width:360px;padding:28px 24px;text-align:center;
+}
+.modal h3{
+  font-family:'Noto Serif SC',serif;
+  font-size:18px;color:var(--ink);margin-bottom:10px;font-weight:700;
+}
+.modal p{font-size:13px;color:var(--muted);line-height:1.75;margin-bottom:20px;font-family:'Noto Sans SC',sans-serif}
+.modal-input{
+  width:100%;padding:12px 14px;
+  background:#fff;border:1px solid var(--border2);
+  color:var(--ink);font-size:15px;
+  font-family:'Noto Sans SC',sans-serif;
+  outline:none;margin-bottom:12px;text-align:center;
+  letter-spacing:0.3em;transition:border-color 0.2s;
+}
+.modal-input:focus{border-color:var(--zhu)}
+.modal-input::placeholder{color:var(--border2)}
+.modal-confirm{
+  width:100%;padding:13px;
+  background:var(--zhu);color:#fff;border:none;
+  font-family:'Noto Serif SC',serif;font-size:14px;font-weight:700;
+  cursor:pointer;letter-spacing:0.15em;margin-bottom:8px;
+  transition:background 0.15s;
+}
+.modal-confirm:hover{background:#a93226}
+.modal-cancel{
+  width:100%;padding:10px;background:transparent;
+  border:none;color:var(--muted);font-size:12px;cursor:pointer;
+  font-family:'Noto Sans SC',sans-serif;letter-spacing:0.05em;
+}
+.modal-err{font-size:12px;color:var(--zhu);margin-bottom:8px;min-height:18px}
+
+/* ─── TOAST ─── */
+.toast{
+  position:fixed;top:20px;left:50%;transform:translateX(-50%) translateY(-60px);
+  background:var(--ink);border:1px solid var(--border2);
+  padding:10px 20px;
+  font-size:13px;color:var(--silk);
+  z-index:500;transition:transform 0.3s cubic-bezier(.2,.8,.3,1);
+  white-space:nowrap;pointer-events:none;
+  box-shadow:0 4px 20px rgba(0,0,0,0.3);
+  font-family:'Noto Sans SC',sans-serif;
+}
+.toast.show{transform:translateX(-50%) translateY(0)}
+
+/* ─── SAVE BANNER ─── */
+.save-banner{
+  background:rgba(192,57,43,0.06);
+  border-bottom:1px solid rgba(192,57,43,0.15);
+  padding:5px 16px;text-align:center;
+  font-size:11px;color:var(--zhu);opacity:0.7;
+  letter-spacing:0.05em;display:none;flex-shrink:0;
+  font-family:'Noto Sans SC',sans-serif;
+}
+.save-banner.show{display:block}
+
+/* ─── SWIPE HINT ─── */
+.swipe-hint{
+  font-size:11px;color:var(--muted);
+  text-align:center;padding:2px 0 6px;
+  letter-spacing:0.05em;flex-shrink:0;opacity:0.5;
+  font-family:'Noto Sans SC',sans-serif;
+}
+
+/* ─── SOCIAL PROOF ─── */
+.social-proof{
+  display:flex;align-items:center;gap:8px;padding:8px 0 14px;
+  font-size:11px;color:var(--muted);justify-content:center;
+  font-family:'Noto Sans SC',sans-serif;
+}
+.social-avatars{display:flex}
+.social-avatar{
+  width:20px;height:20px;
+  background:var(--silk2);border:1.5px solid var(--silk);
+  margin-left:-5px;font-size:9px;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--muted);
+}
+.social-avatar:first-child{margin-left:0}
+
+/* ─── BADGE TYPES ─── */
+.badge-凤仪天下型{background:rgba(184,134,11,0.1);color:var(--gold);border-color:rgba(184,134,11,0.35)}
+.badge-运筹帷幄型{background:rgba(44,62,150,0.08);color:#4a5abf;border-color:rgba(44,62,150,0.25)}
+.badge-铁血忠义型{background:rgba(192,57,43,0.1);color:var(--zhu);border-color:rgba(192,57,43,0.3)}
+.badge-柔情御心型{background:rgba(183,74,116,0.08);color:#b74a74;border-color:rgba(183,74,116,0.25)}
+.badge-暗影幕后型{background:rgba(50,40,30,0.1);color:#7a6858;border-color:rgba(50,40,30,0.2)}
+.badge-以柔守正型{background:rgba(39,128,77,0.08);color:#27804d;border-color:rgba(39,128,77,0.25)}
+.badge-八面玲珑型{background:rgba(130,90,20,0.1);color:#7a5a14;border-color:rgba(130,90,20,0.3)}
+
+/* ─── COVER ANIMATIONS ─── */
+.cover-content{animation:cover-rise 0.9s cubic-bezier(.2,.8,.3,1) both}
+@keyframes cover-rise{
+  from{opacity:0;transform:translateY(24px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* ─── RESULT REVEAL ─── */
+.res-hero{animation:hero-reveal 0.65s cubic-bezier(.2,.8,.3,1) both}
+@keyframes hero-reveal{
+  from{opacity:0;transform:translateY(16px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.res-body{animation:hero-reveal 0.65s 0.12s cubic-bezier(.2,.8,.3,1) both}
+
+/* ─── OPT MICRO-ANIM ─── */
+.opt{transition:all 0.18s cubic-bezier(.2,.8,.3,1)}
+
+/* ─── TYPEWRITER CURSOR ─── */
+.typewriter-cursor{
+  display:inline-block;width:2px;height:0.85em;
+  background:var(--zhu);margin-left:2px;
+  animation:cursor-blink 0.7s steps(1) infinite;
+  vertical-align:middle;
+}
+@keyframes cursor-blink{0%,100%{opacity:1}50%{opacity:0}}
+
+/* ─── SHARE CARD ─── */
+.card-screen{
+  position:fixed;inset:0;z-index:120;
+  background:rgba(28,16,8,0.75);
+  display:none;flex-direction:column;align-items:center;
+  justify-content:center;padding:20px;
+}
+.card-screen.open{display:flex}
+.card-close-btn{
+  position:absolute;top:16px;right:16px;
+  background:transparent;border:none;color:var(--silk);
+  font-size:20px;cursor:pointer;opacity:0.6;
+  font-family:'Noto Sans SC',sans-serif;
+}
+.share-card-wrap{
+  width:100%;max-width:320px;
+  background:var(--silk);border:1px solid var(--border2);
+  padding:28px 24px;margin-bottom:16px;
+  position:relative;overflow:hidden;
+}
+.share-card-wrap::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:var(--zhu);
+}
+.card-name{
+  font-family:'Noto Serif SC',serif;
+  font-size:2rem;font-weight:900;color:var(--ink);
+  margin-bottom:4px;
+}
+.card-type{
+  font-size:11px;color:var(--zhu);letter-spacing:0.25em;
+  margin-bottom:16px;font-family:'Noto Sans SC',sans-serif;
+}
+.card-quote{
+  font-family:'Noto Serif SC',serif;
+  font-size:12px;color:var(--ink2);line-height:1.9;
+  font-style:italic;padding:12px;
+  background:var(--silk2);border-left:2px solid var(--zhu);
+  margin-bottom:16px;
+}
+.card-traits{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.card-trait{background:#fff;border:1px solid var(--border);padding:8px 10px}
+.card-trait-l{font-size:9px;color:var(--muted);margin-bottom:2px}
+.card-trait-v{font-size:11px;font-weight:600;color:var(--ink);font-family:'Noto Serif SC',serif}
+.card-footer{
+  font-size:10px;color:var(--muted);text-align:center;margin-top:14px;
+  letter-spacing:0.15em;font-family:'Noto Sans SC',sans-serif;
+}
+.show-card-btn,.card-share-btn{
+  background:transparent;border:1px solid var(--border2);
+  color:var(--muted);padding:10px 20px;
+  font-size:12px;cursor:pointer;letter-spacing:0.08em;
+  font-family:'Noto Sans SC',sans-serif;margin:0 4px;
+  transition:all 0.15s;
+}
+.show-card-btn:hover,.card-share-btn:hover{background:var(--silk2);color:var(--ink)}
+.card-hint{text-align:center;font-size:11px;color:rgba(245,234,208,0.5);padding:6px 16px 0}
+
+/* ─── PAYMENT SCREEN ─── */
+.pay-screen{
+  position:fixed;inset:0;z-index:150;
+  background:var(--silk);display:none;flex-direction:column;overflow-y:auto;
+}
+.pay-screen.open{display:flex}
+.pay-header{
+  padding:16px 20px 14px;
+  display:flex;align-items:center;gap:12px;
+  border-bottom:1px solid var(--border);
+  position:sticky;top:0;background:var(--silk);z-index:2;
+}
+.pay-back{
+  background:none;border:none;color:var(--muted);
+  font-size:18px;cursor:pointer;padding:0 4px;line-height:1;
+}
+.pay-header-title{
+  font-family:'Noto Serif SC',serif;font-size:16px;font-weight:700;color:var(--ink);
+}
+.pay-body{padding:24px 22px;flex:1}
+.pay-order{
+  background:#fff;border:1px solid var(--border);padding:16px;margin-bottom:20px;
+}
+.pay-order-row{
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:13px;padding:6px 0;font-family:'Noto Sans SC',sans-serif;
+}
+.pay-order-label{color:var(--muted)}
+.pay-order-value{color:var(--ink);font-weight:500}
+.pay-order-total{border-top:1px solid var(--border);margin-top:6px;padding-top:10px}
+.pay-order-total .pay-order-label{color:var(--ink2)}
+.pay-order-total .pay-order-value{
+  font-size:20px;font-family:'Noto Serif SC',serif;font-weight:700;color:var(--zhu);
+}
+.pay-methods{margin-bottom:20px}
+.pay-methods-title{
+  font-size:11px;letter-spacing:0.25em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:10px;font-weight:500;
+  font-family:'Noto Sans SC',sans-serif;
+}
+.pay-method-tabs{display:flex;gap:8px;margin-bottom:16px}
+.pay-method-tab{
+  flex:1;padding:10px 8px;
+  background:#fff;border:1px solid var(--border);
+  text-align:center;cursor:pointer;
+  font-size:13px;color:var(--muted);transition:all 0.15s;
+  font-family:'Noto Sans SC',sans-serif;
+}
+.pay-method-tab.active{
+  border-color:var(--zhu);background:var(--zhu-pale);color:var(--zhu);
+}
+.pay-method-tab span{display:block;font-size:17px;margin-bottom:3px}
+.qr-wrap{
+  background:#fff;border:1px solid var(--border);
+  padding:20px;text-align:center;margin-bottom:16px;
+}
+.qr-placeholder{
+  width:180px;height:180px;margin:0 auto 14px;
+  background:#fff;display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;border:1px solid var(--border);
+}
+.qr-inner-canvas{width:100%;height:100%}
+.qr-amount-badge{
+  display:inline-block;padding:4px 14px;
+  background:var(--zhu-pale);border:1px solid rgba(192,57,43,0.25);
+  color:var(--zhu);font-size:13px;font-weight:700;
+  margin-bottom:14px;font-family:'Noto Serif SC',serif;
+}
+.qr-instruction{
+  font-size:12px;color:var(--muted);line-height:1.85;
+  font-family:'Noto Sans SC',sans-serif;
+}
+.pay-steps{display:flex;justify-content:space-between;margin-bottom:24px;padding:16px;background:#fff;border:1px solid var(--border)}
+.pay-step{text-align:center;flex:1}
+.pay-step-num{
+  width:24px;height:24px;border:1px solid var(--border);
+  border-radius:0;margin:0 auto 6px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;color:var(--muted);
+}
+.pay-step.done .pay-step-num{background:var(--zhu-pale);border-color:rgba(192,57,43,0.4);color:var(--zhu)}
+.pay-step-label{font-size:10px;color:var(--muted);letter-spacing:0.05em;font-family:'Noto Sans SC',sans-serif}
+.pay-code-section{margin-bottom:12px}
+.pay-code-label{
+  font-size:12px;color:var(--muted);margin-bottom:8px;
+  display:flex;align-items:center;gap:6px;font-family:'Noto Sans SC',sans-serif;
+}
+.pay-code-input-row{display:flex;gap:8px}
+.pay-code-input{
+  flex:1;padding:13px 14px;background:#fff;
+  border:1px solid var(--border2);color:var(--ink);font-size:15px;
+  font-family:'Noto Sans SC',sans-serif;
+  outline:none;letter-spacing:0.25em;text-align:center;text-transform:uppercase;
+  transition:border-color 0.2s;
+}
+.pay-code-input:focus{border-color:var(--zhu)}
+.pay-code-btn{
+  padding:13px 18px;background:var(--zhu);color:#fff;border:none;
+  font-family:'Noto Serif SC',serif;font-size:14px;font-weight:700;
+  cursor:pointer;transition:background 0.15s;white-space:nowrap;
+}
+.pay-code-btn:hover{background:#a93226}
+.pay-code-err{font-size:12px;color:var(--zhu);min-height:18px;margin-top:6px;padding-left:2px}
+.pay-help{font-size:12px;color:var(--muted);line-height:1.8;text-align:center;padding:4px 0 16px;font-family:'Noto Sans SC',sans-serif}
+.qr-custom-note{
+  background:var(--gold-pale);border:1px dashed var(--border);
+  padding:10px 14px;font-size:11px;color:var(--muted);
+  line-height:1.7;margin-bottom:14px;text-align:center;
+  font-family:'Noto Sans SC',sans-serif;
+}
+.qr-custom-note strong{color:var(--gold)}
+
+/* ─── ADMIN ─── */
+.admin-panel{
+  position:fixed;inset:0;z-index:200;background:var(--silk);
+  overflow-y:auto;transform:translateX(100%);
+  transition:transform 0.3s cubic-bezier(.4,0,.2,1);
+}
+.admin-panel.open{transform:translateX(0)}
+.admin-header{
+  padding:16px 20px;display:flex;justify-content:space-between;align-items:center;
+  border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--silk);z-index:1;
+}
+.admin-title{font-family:'Noto Serif SC',serif;font-size:16px;font-weight:700;color:var(--ink)}
+.admin-close{background:none;border:none;font-size:20px;cursor:pointer;color:var(--muted)}
+.admin-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:16px 20px}
+.stat-card{background:#fff;border:1px solid var(--border);padding:14px}
+.stat-lbl{font-size:10px;color:var(--muted);margin-bottom:4px;letter-spacing:0.05em;font-family:'Noto Sans SC',sans-serif}
+.stat-val{font-size:1.6rem;font-weight:700;color:var(--ink);font-family:'Noto Serif SC',serif}
+.admin-section-title{font-size:11px;letter-spacing:0.2em;color:var(--muted);padding:0 20px;font-family:'Noto Sans SC',sans-serif}
+.admin-bar-item{display:flex;align-items:center;gap:8px;padding:6px 20px;font-size:12px}
+.admin-bar-label{width:60px;color:var(--ink2);font-family:'Noto Serif SC',serif;font-size:11px}
+.admin-bar-track{flex:1;height:4px;background:var(--border)}
+.admin-bar-fill{height:100%;background:var(--zhu);transition:width 0.5s ease}
+.admin-bar-count{width:24px;text-align:right;color:var(--muted);font-size:11px}
+.code-gen-section{padding:16px 20px}
+.code-gen-row{display:flex;gap:8px;margin-bottom:10px}
+.code-gen-input{
+  width:80px;padding:8px 10px;background:#fff;border:1px solid var(--border);
+  color:var(--ink);font-size:13px;outline:none;
+}
+.code-gen-btn{
+  flex:1;padding:8px;background:var(--ink);color:var(--silk);border:none;
+  font-size:12px;cursor:pointer;font-family:'Noto Sans SC',sans-serif;
+  transition:background 0.15s;
+}
+.code-gen-btn:hover{background:#3d2000}
+.codes-list{
+  font-size:12px;color:var(--muted);
+  white-space:pre-wrap;padding:10px;
+  background:#fff;border:1px solid var(--border);
+  max-height:160px;overflow-y:auto;
+  font-family:monospace;line-height:1.7;
+}
+.admin-entry{
+  position:fixed;bottom:20px;right:20px;z-index:50;
+  width:36px;height:36px;
+  background:rgba(44,24,16,0.6);border:1px solid var(--border2);
+  color:var(--muted);font-size:16px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:all 0.15s;
+}
+.admin-entry:hover{background:var(--ink);color:var(--silk)}
+
+/* ─── MOBILE ADJUSTMENTS ─── */
+@media(max-width:380px){
+  .cover-title{font-size:2.2rem}
+  .res-name{font-size:2.6rem}
+  .q-text{font-size:15px;margin-bottom:14px}
+  .opt{padding:11px 13px}
+  .quiz-body{padding:16px 18px 6px}
+  .quiz-footer{padding:10px 16px 16px}
+}
+@media(min-width:420px){
+  .cover-title{font-size:3.2rem}
+}/* ════════ PALACE CARD ════════ */
+.card-screen{
+  position:fixed;inset:0;z-index:120;
+  background:rgba(26,16,8,0.82);
+  display:none;flex-direction:column;align-items:center;
+  justify-content:flex-start;padding:20px 20px 0;
+  overflow-y:auto;-webkit-overflow-scrolling:touch;
+}
+.card-screen.open{display:flex}
+.card-close-btn{
+  align-self:flex-end;
+  background:transparent;border:1px solid rgba(245,240,232,0.25);
+  color:rgba(245,240,232,0.6);font-size:14px;
+  width:32px;height:32px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:12px;flex-shrink:0;
+  font-family:'Noto Sans SC',sans-serif;
+  transition:all 0.15s;
+}
+.card-close-btn:hover{background:rgba(245,240,232,0.1);color:#f5f0e8}
+
+/* The card */
+.palace-card{
+  width:100%;max-width:320px;
+  background:var(--silk);
+  position:relative;
+  overflow:hidden;
+  flex-shrink:0;
+  box-shadow:0 20px 60px rgba(0,0,0,0.5),0 0 0 1px var(--border2);
+}
+
+/* Seal bar at top */
+.pc-seal-bar{
+  background:var(--ink);
+  padding:8px 16px;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.pc-seal-left{
+  font-family:'Noto Serif SC',serif;
+  font-size:11px;letter-spacing:0.35em;
+  color:rgba(245,240,232,0.6);font-weight:400;
+}
+.pc-seal-right{
+  font-size:10px;letter-spacing:0.2em;
+  color:rgba(192,57,43,0.6);
+  font-family:'Noto Sans SC',sans-serif;font-weight:300;
+  text-transform:uppercase;
+}
+
+/* Hero section */
+.pc-hero{
+  background:var(--ink);
+  padding:32px 24px 28px;
+  text-align:center;
+  position:relative;
+}
+/* subtle radial glow */
+.pc-hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 60% at 50% 30%,rgba(192,57,43,0.15) 0%,transparent 65%);
+  pointer-events:none;
+}
+
+/* Corner ornaments */
+.pc-corner{
+  position:absolute;width:18px;height:18px;
+}
+.pc-corner-tl{top:10px;left:10px;border-top:1.5px solid rgba(192,57,43,0.45);border-left:1.5px solid rgba(192,57,43,0.45)}
+.pc-corner-tr{top:10px;right:10px;border-top:1.5px solid rgba(192,57,43,0.45);border-right:1.5px solid rgba(192,57,43,0.45)}
+.pc-corner-bl{bottom:10px;left:10px;border-bottom:1.5px solid rgba(192,57,43,0.45);border-left:1.5px solid rgba(192,57,43,0.45)}
+.pc-corner-br{bottom:10px;right:10px;border-bottom:1.5px solid rgba(192,57,43,0.45);border-right:1.5px solid rgba(192,57,43,0.45)}
+
+.pc-emoji{
+  font-size:36px;margin-bottom:10px;display:block;
+  filter:drop-shadow(0 2px 8px rgba(192,57,43,0.3));
+  position:relative;z-index:1;
+}
+.pc-position-label{
+  font-size:9px;letter-spacing:0.5em;
+  color:rgba(192,57,43,0.6);
+  text-transform:uppercase;margin-bottom:8px;
+  font-family:'Noto Sans SC',sans-serif;
+  position:relative;z-index:1;
+}
+.pc-name{
+  font-family:'Noto Serif SC',serif;
+  font-size:2.4rem;font-weight:900;
+  color:#f5ead0;
+  line-height:1.1;margin-bottom:10px;
+  text-shadow:0 2px 16px rgba(0,0,0,0.4);
+  position:relative;z-index:1;
+}
+.pc-type-badge{
+  display:inline-block;
+  padding:3px 14px;
+  border:1px solid rgba(192,57,43,0.5);
+  background:rgba(192,57,43,0.1);
+  font-size:10px;letter-spacing:0.3em;
+  color:rgba(192,57,43,0.9);
+  margin-bottom:8px;
+  font-family:'Noto Sans SC',sans-serif;
+  position:relative;z-index:1;
+}
+.pc-rank{
+  font-size:11px;
+  color:rgba(245,234,208,0.38);
+  letter-spacing:0.12em;
+  font-family:'Noto Sans SC',sans-serif;font-weight:300;
+  position:relative;z-index:1;
+}
+
+/* Quote stripe */
+.pc-quote-stripe{
+  background:var(--silk2);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  padding:14px 20px;
+}
+.pc-quote-inner{
+  font-family:'Noto Serif SC',serif;
+  font-size:12px;color:var(--ink2);
+  line-height:1.85;font-style:italic;
+  text-align:center;
+  padding-left:14px;
+  border-left:2px solid var(--zhu);
+  text-align:left;
+}
+
+/* Traits grid */
+.pc-traits{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:0;
+  border-bottom:1px solid var(--border);
+}
+.pc-trait{
+  padding:10px 14px;
+  border-right:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+.pc-trait:nth-child(2n){border-right:none}
+.pc-trait:nth-last-child(-n+2){border-bottom:none}
+.pc-trait-l{font-size:9px;color:var(--muted);margin-bottom:3px;letter-spacing:0.05em;font-family:'Noto Sans SC',sans-serif}
+.pc-trait-v{font-size:12px;font-weight:700;color:var(--ink);font-family:'Noto Serif SC',serif}
+
+/* Footer divider */
+.pc-footer-divider{
+  display:flex;align-items:center;padding:0 20px;height:24px;
+}
+.pc-fd-line{flex:1;height:0.5px;background:var(--border)}
+.pc-fd-diamond{
+  width:5px;height:5px;background:var(--zhu);
+  transform:rotate(45deg);margin:0 10px;flex-shrink:0;
+}
+
+/* Footer */
+.pc-footer{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:0 20px 16px;
+}
+.pc-footer-brand{
+  font-family:'Noto Serif SC',serif;
+  font-size:11px;color:var(--muted);letter-spacing:0.1em;
+}
+.pc-footer-tag{
+  font-size:10px;color:var(--zhu);
+  letter-spacing:0.05em;
+  font-family:'Noto Sans SC',sans-serif;opacity:0.7;
+}
+
+/* Card hint + actions */
+.card-hint{
+  text-align:center;font-size:11px;
+  color:rgba(245,240,232,0.35);
+  padding:10px 16px 6px;
+  letter-spacing:0.08em;
+  font-family:'Noto Sans SC',sans-serif;
+}
+.card-actions{
+  display:flex;gap:10px;padding:10px 0 24px;
+  width:100%;max-width:320px;
+}
+.card-act-btn{
+  flex:1;padding:12px;border:none;cursor:pointer;
+  font-size:13px;letter-spacing:0.1em;
+  font-family:'Noto Sans SC',sans-serif;
+  transition:all 0.15s;
+}
+.card-act-primary{
+  background:var(--zhu);color:#fff;
+}
+.card-act-primary:hover{background:#a93226}
+.card-act-secondary{
+  background:transparent;border:1px solid rgba(245,240,232,0.2);
+  color:rgba(245,240,232,0.5);
+}
+.card-act-secondary:hover{background:rgba(245,240,232,0.08)}
+
+</style>
+</head>
+<body>
+<div id="app">
+
+<!-- ══ COVER ══ -->
+<div class="screen active" id="screen-cover">
+  <canvas id="cover-canvas" style="position:absolute;inset:0;pointer-events:none;opacity:0;display:none"></canvas>
+  <div class="cover-decor-lines"></div>
+  <div class="cover-content">
+    <div class="cover-seal">命</div>
+    <div class="cover-eyebrow">前世宫廷测验</div>
+    <div class="cover-title">前世你在<br>宫中是<br><span>何职位</span>？</div>
+    <div class="cover-subtitle">宫廷命格 · 灵魂溯源 · 深度解析</div>
+    <div class="cover-divider">
+      <div class="cover-divider-line"></div>
+      <div class="cover-divider-diamond"></div>
+      <div class="cover-divider-line"></div>
+    </div>
+    <div class="cover-desc">通过10道灵魂场景题，揭开你前世在宫中的身份——你是掌权的皇后、运筹帷幄的谋士，还是暗中守护的侍卫统领？</div>
+    <div class="cover-meta">
+      <div class="cover-meta-item"><strong>10</strong>道题目</div>
+      <div class="cover-meta-item"><strong>3</strong>分钟</div>
+      <div class="cover-meta-item"><strong>8</strong>种结果</div>
+    </div>
+    <button class="start-btn" id="btn-start">开始测试</button>
+  </div>
+  <div class="cover-footer">本测试基于人格心理学与前世命理分析 · 仅供娱乐参考</div>
+</div>
+
+<!-- ══ QUIZ ══ -->
+<div class="screen" id="screen-quiz">
+  <div class="quiz-header">
+    <div class="quiz-header-top">
+      <span class="q-counter" id="q-counter">第 1 题 / 共 10 题</span>
+      <span class="q-pct" id="q-pct">0%</span>
+    </div>
+    <div class="prog-track"><div class="prog-fill" id="prog" style="width:0%"></div></div>
+  </div>
+  <div class="save-banner" id="save-banner">进度已自动保存</div>
+  <div class="quiz-body">
+    <div class="q-num" id="q-num">第一题</div>
+    <div class="q-text" id="q-text"></div>
+    <div class="options" id="options"></div>
+  </div>
+  <div class="swipe-hint" id="swipe-hint">选择后点击下一题</div>
+  <div class="quiz-footer">
+    <button class="nav-btn btn-back" id="btn-back">← 上一题</button>
+    <button class="nav-btn btn-next" id="btn-next" disabled>下一题 →</button>
+  </div>
+</div>
+
+<!-- ══ LOADING ══ -->
+<div class="screen" id="screen-loading">
+  <div class="loading-book">🏯</div>
+  <div class="loading-text" id="loading-text">正在翻阅前世宫廷档案…</div>
+  <div class="loading-dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+</div>
+
+<!-- ══ RESULT ══ -->
+<div class="screen" id="screen-result">
+  <div class="res-hero">
+    <div class="res-hero-glow"></div>
+    <div class="res-hero-corner"></div>
+    <div class="result-score-wrap" id="r-score-badge">命格匹配度 —</div>
+    <span class="char-emoji" id="r-emoji">🏯</span>
+    <div class="res-badge" id="r-badge">凤仪天下型</div>
+    <div class="res-name" id="r-name">中宫皇后</div>
+    <div class="res-origin" id="r-origin">正一品 · 母仪天下</div>
+    <div class="res-tagline" id="r-tagline">"凤冠之重，不在于金玉，而在于承担。"</div>
+  </div>
+
+  <div class="res-body">
+    <div class="res-section">
+      <div class="res-section-title">性格维度</div>
+      <div class="trait-grid" id="r-traits"></div>
+    </div>
+    <div class="res-section">
+      <div class="res-section-title">命格预览</div>
+      <div class="res-desc-preview" id="r-preview">
+        <p id="r-preview-text"></p>
+        <div class="res-blur-overlay">
+          <span class="res-blur-label">解锁完整宫廷档案 ↓</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAYWALL -->
+  <div class="paywall" id="paywall">
+    <div class="countdown-bar" id="countdown-bar">
+      <span class="cd-icon">⏳</span>
+      <span class="cd-text">限时优惠价，剩余时间</span>
+      <span class="cd-time" id="cd-time">29:59</span>
+    </div>
+    <div class="share-unlock" id="share-unlock">
+      <div class="share-unlock-title">🎁 分享解锁免费报告</div>
+      <div class="share-unlock-sub">把测试链接分享给3位朋友<br>即可免费解锁完整宫廷档案</div>
+      <div class="share-steps">
+        <div class="share-step"><strong>1</strong>复制链接</div>
+        <div class="share-step"><strong>2</strong>发给好友</div>
+        <div class="share-step"><strong>3</strong>自动解锁</div>
+      </div>
+      <div class="share-progress-row">
+        <span class="share-prog-label">已分享</span>
+        <span class="share-prog-count"><span id="share-count">0</span> / 3 人</span>
+      </div>
+      <div class="share-prog-track"><div class="share-prog-fill" id="share-prog" style="width:0%"></div></div>
+      <button class="share-btn" id="btn-share">复制链接并分享 →</button>
+    </div>
+    <div class="paywall-top">
+      <div class="paywall-lock">🔒</div>
+      <div class="paywall-title">解锁完整宫廷命格档案</div>
+      <div class="paywall-sub">前世身份只是开始<br>你真正的宫廷命格藏在这里</div>
+    </div>
+    <div class="paywall-features">
+      <div class="feature-item"><span class="feature-dot"></span>深度宫廷身份解析（600字）</div>
+      <div class="feature-item"><span class="feature-dot"></span>5大宫廷特质维度分析</div>
+      <div class="feature-item"><span class="feature-dot"></span>今生性格映射与处世建议</div>
+      <div class="feature-item"><span class="feature-dot"></span>你与其他宫廷职位的命格契合度</div>
+      <div class="feature-item"><span class="feature-dot"></span>前世宫廷故事情境还原</div>
+    </div>
+    <div class="paywall-cta">
+      <div class="price-row">
+        <span class="price-main">¥9.9</span>
+        <span class="price-unit">/ 次</span>
+        <span class="price-original">¥29.9</span>
+      </div>
+      <div class="paywall-social">
+        <div class="social-avatars">
+          <div class="social-avatar">宫</div>
+          <div class="social-avatar">廷</div>
+          <div class="social-avatar">魂</div>
+        </div>
+        <span>已有 <strong style="color:rgba(184,147,63,0.7)">3,261</strong> 人解锁了完整报告</span>
+      </div>
+      <button class="unlock-btn" id="btn-unlock">立即解锁 · 永久保存</button>
+      <div class="unlock-hint">支付后获得专属解锁码 · 截图永久有效</div>
+    </div>
+  </div>
+
+  <!-- FULL REPORT (hidden until unlock) -->
+  <div class="full-report" id="full-report">
+    <div class="report-section">
+      <div class="report-section-title">前世宫廷深度解析</div>
+      <div class="full-desc" id="r-full-desc"></div>
+    </div>
+    <div class="report-section">
+      <div class="report-section-title">命格特质维度</div>
+      <div id="r-dims"></div>
+    </div>
+    <div class="report-section">
+      <div class="report-section-title">今生处世建议</div>
+      <div id="r-advice"></div>
+    </div>
+    <div class="report-section">
+      <div class="report-section-title">历史同类命格</div>
+      <div class="peer-row" id="r-peers"></div>
+    </div>
+    <div class="report-section compat-section">
+      <div class="report-section-title">与其他宫廷职位的契合度</div>
+      <div id="r-compat"></div>
+    </div>
+    <div class="report-section books-section">
+      <div class="report-section-title">为你推荐的三本书</div>
+      <div id="r-books"></div>
+    </div>
+    <div class="share-strip">
+      <p>截图发到小红书<br><strong>#测测你的前世宫廷职位</strong><br>和朋友一起测测前世身份</p>
+    </div>
+    <button class="show-card-btn" id="btn-show-card">生成我的专属宫廷命格卡片 ✦</button>
+  </div>
+
+  <div class="retry-row">
+    <button class="retry-btn-full" id="btn-retry">重新测试 →</button>
+  </div>
+</div>
+
+
+<!-- ══ SHARE CARD OVERLAY ══ -->
+<div class="card-screen" id="card-screen">
+  <button class="card-close-btn" id="btn-card-close">✕</button>
+
+  <!-- The card itself (screenshot target) -->
+  <div class="palace-card" id="share-card">
+    <!-- Top seal bar -->
+    <div class="pc-seal-bar">
+      <div class="pc-seal-left">前世宫廷命格</div>
+      <div class="pc-seal-right">Palace Soul</div>
+    </div>
+
+    <!-- Hero area -->
+    <div class="pc-hero">
+      <!-- Corner ornaments -->
+      <div class="pc-corner pc-corner-tl"></div>
+      <div class="pc-corner pc-corner-tr"></div>
+      <div class="pc-corner pc-corner-bl"></div>
+      <div class="pc-corner pc-corner-br"></div>
+
+      <div class="pc-emoji" id="card-emoji">👑</div>
+      <div class="pc-position-label">前世职位</div>
+      <div class="pc-name" id="card-name">中宫皇后</div>
+      <div class="pc-type-badge" id="card-type">凤仪天下型</div>
+      <div class="pc-rank" id="card-rank">正一品 · 母仪天下</div>
+    </div>
+
+    <!-- Quote stripe -->
+    <div class="pc-quote-stripe">
+      <div class="pc-quote-inner" id="card-quote"></div>
+    </div>
+
+    <!-- Traits grid -->
+    <div class="pc-traits" id="card-traits"></div>
+
+    <!-- Divider -->
+    <div class="pc-footer-divider">
+      <div class="pc-fd-line"></div>
+      <div class="pc-fd-diamond"></div>
+      <div class="pc-fd-line"></div>
+    </div>
+
+    <!-- Footer -->
+    <div class="pc-footer">
+      <span class="pc-footer-brand">前世宫廷测验</span>
+      <span class="pc-footer-tag">#测测你的前世宫廷职位</span>
+    </div>
+  </div>
+
+  <div class="card-hint">长按卡片保存 · 截图发布小红书</div>
+  <div class="card-actions">
+    <button class="card-act-btn card-act-primary" id="btn-card-share">复制链接并分享 ✦</button>
+    <button class="card-act-btn card-act-secondary" id="btn-card-close2">关闭</button>
+  </div>
+</div>
+
+<!-- ══ PAYMENT SCREEN ══ -->
+<div class="pay-screen" id="pay-screen">
+  <div class="pay-header">
+    <button class="pay-back" id="btn-pay-back">←</button>
+    <span class="pay-header-title">完成支付 · 获取解锁码</span>
+  </div>
+  <div class="pay-body">
+
+    <!-- step indicator -->
+    <div class="pay-steps" style="margin-bottom:24px">
+      <div class="pay-step done">
+        <div class="pay-step-num">1</div>
+        <div class="pay-step-label">查看结果</div>
+      </div>
+      <div class="pay-step done">
+        <div class="pay-step-num">2</div>
+        <div class="pay-step-label">选择解锁</div>
+      </div>
+      <div class="pay-step">
+        <div class="pay-step-num">3</div>
+        <div class="pay-step-label">扫码付款</div>
+      </div>
+      <div class="pay-step">
+        <div class="pay-step-num">4</div>
+        <div class="pay-step-label">输入码解锁</div>
+      </div>
+    </div>
+
+    <!-- order summary -->
+    <div class="pay-order">
+      <div class="pay-order-row">
+        <span class="pay-order-label">商品</span>
+        <span class="pay-order-value">完整宫廷命格档案（永久）</span>
+      </div>
+      <div class="pay-order-row">
+        <span class="pay-order-label">原价</span>
+        <span class="pay-order-value" style="text-decoration:line-through;color:rgba(245,234,208,0.3)">¥29.9</span>
+      </div>
+      <div class="pay-order-row pay-order-total">
+        <span class="pay-order-label">限时优惠价</span>
+        <span class="pay-order-value">¥9.9</span>
+      </div>
+    </div>
+
+    <!-- payment method tabs -->
+    <div class="pay-methods">
+      <div class="pay-methods-title">选择付款方式</div>
+      <div class="pay-method-tabs">
+        <div class="pay-method-tab active" id="tab-wechat" data-method="wechat">
+          <span>💚</span>微信支付
+        </div>
+        <div class="pay-method-tab" id="tab-alipay" data-method="alipay">
+          <span>💙</span>支付宝
+        </div>
+      </div>
+
+      <!-- QR area -->
+      <div class="qr-custom-note">
+        ⬇ 请将下方二维码替换为你的<strong>真实收款码</strong><br>
+        替换方法见配套运营文档
+      </div>
+      <div class="qr-wrap">
+        <div class="qr-amount-badge">¥9.9</div>
+        <div class="qr-placeholder" id="qr-placeholder">
+          <!-- 真实二维码图片放这里 -->
+          <!-- <img src="your-qrcode.jpg" style="width:100%;height:100%;object-fit:cover"> -->
+          <canvas id="qr-canvas" class="qr-inner-canvas"></canvas>
+        </div>
+        <div class="qr-instruction">
+          <strong id="qr-method-name">微信</strong>扫描上方二维码付款<br>
+          付款备注：<strong>宫廷测验</strong><br>
+          收到付款后博主将在 <strong>5分钟内</strong> 私信你解锁码
+        </div>
+      </div>
+    </div>
+
+    <!-- code entry -->
+    <div class="pay-code-section">
+      <div class="pay-code-label">收到解锁码后输入这里</div>
+      <div class="pay-code-input-row">
+        <input class="pay-code-input" id="pay-code-input" placeholder="6位解锁码" maxlength="6">
+        <button class="pay-code-btn" id="btn-pay-confirm">解锁</button>
+      </div>
+      <div class="pay-code-err" id="pay-code-err"></div>
+    </div>
+
+    <div class="pay-help">
+      未收到解锁码？<br>
+      请截图付款记录私信博主，或重新测试后点击解锁<br>
+      <span style="color:rgba(184,147,63,0.4)">解锁码永久有效，截图保存可多次使用</span>
+    </div>
+
+  </div>
+</div>
+
+</div><!-- #app -->
+
+
+<button class="admin-entry" id="btn-admin-entry" title="管理后台">⚙</button>
+
+<div class="toast" id="toast"></div>
+
+<!-- MODAL -->
+<div class="modal-bg" id="modal">
+  <div class="modal">
+    <h3>输入解锁码</h3>
+    <p>购买后将收到6位解锁码<br>输入即可查看完整报告</p>
+    <div class="modal-err" id="modal-err"></div>
+    <input class="modal-input" id="code-input" placeholder="请输入解锁码" maxlength="6">
+    <button class="modal-confirm" id="btn-confirm">确认解锁</button>
+    <button class="modal-cancel" id="btn-cancel">暂不解锁</button>
+  </div>
+</div>
+
+<script>
+const QS=[
+  {t:'深夜，宫中突发一场权力风波，你最可能做的是——',
+   o:[{t:'默默观察，把所有人的反应都记在心里，等待时机',s:{mou:3,jian:1}},
+      {t:'立刻站到最强的那一方，确保自己不受牵连',s:{fei:2,tai:2}},
+      {t:'独自承担压力，用行动护住身边的人',s:{wei:3,hou:1}},
+      {t:'找到核心矛盾，设法从中调停或化解',s:{hou:2,mou:2}}]},
+  {t:'若你在宫中被人误解，受了不白之冤，你的第一反应是——',
+   o:[{t:'忍耐沉默，等待真相自行浮现',s:{gong:3,fei:1}},
+      {t:'暗中调查，找出幕后之人，将计就计',s:{mou:3,jian:1}},
+      {t:'当面据理力争，不肯受半分委屈',s:{hou:2,wei:1}},
+      {t:'转移注意力，先保住眼前的位置再说',s:{tai:2,fei:2}}]},
+  {t:'你理想中的宫廷生活，最接近哪一幅图景？',
+   o:[{t:'手握权柄，每一道旨意都经你过目',s:{hou:3,mou:1}},
+      {t:'游走各方，掌握所有人的秘密却不被人知',s:{jian:3,mou:2}},
+      {t:'守护一方平静，让身边的人不受伤害',s:{wei:3,gong:1}},
+      {t:'低调度日，以柔克刚，安然终老',s:{gong:3,tai:1}}]},
+  {t:'在一场宫廷宴席上，你通常是——',
+   o:[{t:'坐在角落，细细观察每个人的神色与言语',s:{jian:3,mou:2}},
+      {t:'谈笑风生，让所有人都觉得你亲近又无害',s:{fei:3,tai:1}},
+      {t:'端庄得体，每一句话都恰到好处',s:{hou:3,gong:1}},
+      {t:'守在要职，眼神扫视四周，随时待命',s:{wei:3,jian:1}}]},
+  {t:'若有人威胁到你最在乎的人，你会——',
+   o:[{t:'不惜一切，哪怕与对方正面交锋',s:{wei:3,hou:1}},
+      {t:'提前布局，让威胁消失在对方意识到之前',s:{mou:3,jian:2}},
+      {t:'以柔和之姿斡旋，让双方都退一步',s:{hou:2,fei:2}},
+      {t:'默默承受，只要在乎的人安全，自己受苦无妨',s:{gong:3,wei:1}}]},
+  {t:'你觉得在宫中，最重要的生存法则是——',
+   o:[{t:'忠诚是护身符，只效忠一人，绝不二心',s:{wei:3,gong:2}},
+      {t:'情报是力量，知道的越多，越不会被人算计',s:{jian:3,mou:2}},
+      {t:'手腕是关键，柔中带刚才能走得长远',s:{hou:3,fei:1}},
+      {t:'低调才是真理，不争才是最大的赢',s:{gong:3,tai:2}}]},
+  {t:'皇帝突然单独召见你，你内心最真实的感受是——',
+   o:[{t:'保持镇定，飞速分析他此刻的目的',s:{mou:3,jian:2}},
+      {t:'心跳加速，但面上一点都不能让人看出来',s:{fei:2,tai:2}},
+      {t:'感到荣耀，同时警惕随之而来的风险',s:{hou:2,wei:2}},
+      {t:'内心平静，该是你的终究是你的',s:{gong:3,tai:1}}]},
+  {t:'如果可以选择，你更愿意以哪种方式离开宫廷？',
+   o:[{t:'功成身退，留下一段令人敬仰的传说',s:{hou:3,mou:1}},
+      {t:'悄无声息地消失，不留任何痕迹',s:{jian:3,gong:1}},
+      {t:'为护卫的人战死沙场，死得其所',s:{wei:3,hou:1}},
+      {t:'随着岁月慢慢老去，平静终老于宫中一隅',s:{gong:3,tai:2}}]},
+  {t:'你在宫中最大的软肋是——',
+   o:[{t:'太过重情，一旦动情就容易失去判断',s:{fei:3,gong:2}},
+      {t:'过于谨慎，错失很多本可把握的机会',s:{jian:2,mou:1}},
+      {t:'心中有不可逾越的底线，哪怕粉身碎骨也不肯越过',s:{wei:3,hou:1}},
+      {t:'见不得身边的人受苦，常常因此陷入被动',s:{gong:3,fei:1}}]},
+  {t:'多年后，你希望宫中的人提起你时，说的是——',
+   o:[{t:'她曾掌握这片宫廷的命运，是真正的凤凰',s:{hou:3,mou:1}},
+      {t:'没有人知道他真正做过什么，却缺他不可',s:{jian:3,tai:1}},
+      {t:'他一生忠义，护卫之心从未改变',s:{wei:3,gong:1}},
+      {t:'她平静如水，却让所有靠近她的人都感到安稳',s:{gong:3,fei:1}}]}
+];
+
+const CHARS={
+  hou:{
+    name:'中宫皇后',badge:'凤仪天下型',
+    origin:'正一品 · 母仪天下',
+    tagline:'"凤冠之重，不在于金玉，而在于承担——你，生来便是那个撑起一切的人。"',
+    traits:[{l:'核心气质',v:'端庄·威仪'},{l:'处事方式',v:'刚柔并济'},{l:'内心渴望',v:'掌控与守护'},{l:'潜在隐患',v:'孤独难以言说'}],
+    preview:'你前世是宫中的皇后——不是那种靠美貌得宠的后妃，而是真正以智慧与气度撑起后宫的人。你懂得何时示强、何时示弱，深知权力的本质不是压制，而是让人心甘情愿地追随……',
+    full:'<p>你前世站在那个最高的位置，不是因为命运的偶然，而是因为你骨子里就带着一种掌控全局的气场。你看人准，看事透，能在一片混乱中迅速找到最关键的那根线，然后不动声色地牵住它。</p><p>你的天赋是气度。别人慌乱时，你端坐如常；别人争抢时，你已悄悄布好了棋局。你从不轻易发怒，但每一次开口，都能让人感到一种无法忽视的分量。这种气质，不是学来的，是你骨血里带着的。</p><p>但皇后的代价，是孤独。你习惯了承担，习惯了把所有的脆弱藏在凤袍之下。身边的人仰望你、依赖你，却很少有人真正问过你：你还好吗？你学会了不需要被问，甚至有时候自己也忘了曾经需要。</p><p>今生，你依然带着这份气质。你是那个在团队里默默承担最多的人，是朋友圈里大家遇到难事第一个想到的人，是危机时刻最先冷静下来的那个。但你也需要学会一件事：放下凤冠，做一个普通人。允许自己有软弱的时候，允许别人来撑你。</p><p>你前世的遗憾，是太少让人真正靠近。今生，或许可以给自己一个机会，让某个人看见凤袍背后那个真实的你。那个人，值得被你信任。</p>',
+    dims:[{l:'感性',r:'理性',p:55},{l:'内向',r:'外向',p:60},{l:'守成',r:'进取',p:65},{l:'顺从',r:'主导',p:88},{l:'隐忍',r:'直言',p:60}],
+    advice:[{h:'每周一次"卸下凤冠"的时刻',b:'找一件只为自己做、不需要任何人肯定的事，哪怕是一杯咖啡、一段独自散步。给自己一个不用掌控、不用负责的空间，你会发现内心的某个地方开始松动。'},{h:'练习说"我需要你帮我"',b:'你习惯了被人依赖，却很少主动示弱。试着每周一次，把心里真正需要的事直接说出来，不要等对方猜。你会发现，真正重要的人不会因为你示弱而离开，只会更靠近。'},{h:'区分"守护"与"控制"',b:'你的保护欲来自深厚的情感，但有时边界会模糊。问自己：我现在做这件事，是为了让对方更好，还是让自己安心？这个问题，能帮你在关系里走得更远、更舒展。'}],
+    peers:['武则天','甄嬛','孝庄皇太后'],
+    books:[{t:'甄嬛传',a:'流潋紫',r:'前世的你，大概就是这个故事的主角'},{t:'权力的游戏',a:'乔治·R·R·马丁',r:'了解权力的本质与代价'},{t:'被讨厌的勇气',a:'岸见一郎',r:'学会在强大之余，放下对认可的执念'}],
+    compat:{mou:80,wei:70,fei:55,jian:50,gong:65,tai:40}
+  },
+  mou:{
+    name:'首席谋士',badge:'运筹帷幄型',
+    origin:'从一品 · 内阁首辅',
+    tagline:'"棋局之外，才是真正的棋手——你从未站在最显眼的地方，却始终掌握着最关键的一步。"',
+    traits:[{l:'核心气质',v:'深沉·睿智'},{l:'处事方式',v:'布局先行'},{l:'内心渴望',v:'洞察与掌控全局'},{l:'潜在隐患',v:'难以全然信任他人'}],
+    preview:'你前世是宫中的首席谋士——皇帝最倚重的智囊，也是后宫最忌惮的存在。你从不显山露水，却每一步都走在别人前面。你的眼睛能看到别人看不到的三步之后……',
+    full:'<p>你前世坐在那个没有名分却权倾朝野的位置上。没有人知道多少次生死攸关的危机，是你在夜里悄悄化解的；没有人知道那些看似偶然的转机，其实都是你提前埋好的局。你享受这种不被看见的掌控感，胜过任何显赫的头衔。</p><p>你的天赋是洞察。你能看穿人心，能在一句话里读出三层意思，能在一场宴席上预判所有人接下来的行动。这让你极其难以被欺骗，也让你极其难以被真正靠近——因为你总是先想到最坏的可能。</p><p>谋士的困境，是孤独的理性。你太清醒，清醒到有时候会感到一种深深的疲惫——看透了人性的复杂，却依然要与那些复杂打交道。你渴望遇到一个让你不需要算计的人，但每次靠近，那个分析他人的本能又会自动启动。</p><p>今生，你依然是那个会在心里默默做完所有推演才开口的人，是朋友里最难被套出真心话的那个，也是遇到危机时第一个想到解法的那个。你的智慧是礼物，但别让它变成一道把自己关在里面的墙。</p><p>你前世最大的遗憾，是从未真正相信过一个人。今生，或许可以从一个小小的信任开始——不是因为对方值得，而是因为你值得体验那种不算计的轻盈。</p>',
+    dims:[{l:'感性',r:'理性',p:85},{l:'内向',r:'外向',p:25},{l:'守成',r:'进取',p:70},{l:'顺从',r:'主导',p:75},{l:'隐忍',r:'直言',p:30}],
+    advice:[{h:'一周一次"不分析"的对话',b:'找一个你信任的人，聊天时规定自己不分析对方、不推演结果，只是听和说。你会发现，这种"低效"的交流里有一种你很久没有感受过的东西。'},{h:'把"最坏的预案"写下来然后放进抽屉',b:'你的大脑会自动生成各种风险预案，这是天赋也是负担。试着把它们写下来、放进抽屉，告诉自己：预案已经做好了，现在我可以享受当下了。'},{h:'允许自己被帮助',b:'你习惯一个人搞定所有事。试着在某件你可以独立完成的事上，主动请别人参与。不是因为需要，而是因为那会让你练习一件前世没有学会的事：信任。'}],
+    peers:['诸葛亮','王熙凤','张居正'],
+    books:[{t:'三国演义',a:'罗贯中',r:'前世同类灵魂的智慧结晶'},{t:'君主论',a:'马基雅维利',r:'理解权力运作最底层的逻辑'},{t:'亲密关系',a:'克里斯多福·孟',r:'学会在关系里放下防御，真正靠近'}],
+    compat:{hou:80,jian:75,wei:60,fei:45,gong:50,tai:35}
+  },
+  wei:{
+    name:'侍卫统领',badge:'铁血忠义型',
+    origin:'正二品 · 御前侍卫统领',
+    tagline:'"剑可以为任何人出鞘，但只为一人收回——你的忠诚，是这宫廷里最稀缺的东西。"',
+    traits:[{l:'核心气质',v:'刚毅·忠义'},{l:'处事方式',v:'行动优先'},{l:'内心渴望',v:'守护与被信任'},{l:'潜在隐患',v:'不善言辞，易被误解'}],
+    preview:'你前世是御前侍卫统领——站在最危险的地方，守护着最重要的人。你不善于玩弄心机，却是宫中最值得托付性命的那个人。你的眼神里没有算计，只有责任……',
+    full:'<p>你前世站在那个位置，不是因为野心，而是因为责任。你知道，有些事情必须有人去做，而你，恰好是那个愿意去做的人。刀光剑影里你从不退缩，不是因为不怕，而是因为你护着的那个人比你的命更重要。</p><p>你的天赋是笃定。在一个满是算计与谎言的宫廷里，你是那个少数几个真正说到做到的人。你不会用华丽的承诺换取信任，你只会用行动证明。这种笃定，在周围一片浮躁中，显得格外珍贵。</p><p>侍卫统领的困境，是不被真正看见。你保护了太多人，却很少有人想到要保护你。你习惯了站在别人身后，习惯了用沉默表达最深的情感。有时候，你明明心里有千言万语，最后说出口的只是："没事，我在。"</p><p>今生，你是那个朋友圈里永远第一个出现在危机现场的人，是那个说好了就一定会做到的人，也是那个最不会向外求助的人。你的忠义是宝贵的，但记得：你也值得被人好好对待，不是因为你有用，而是因为你这个人。</p><p>你前世从未学会表达软弱。今生，或许可以试着让某个人知道，在你坚硬的铠甲里面，也有一个需要温度的灵魂。</p>',
+    dims:[{l:'感性',r:'理性',p:40},{l:'内向',r:'外向',p:35},{l:'守成',r:'进取',p:45},{l:'顺从',r:'主导',p:55},{l:'隐忍',r:'直言',p:35}],
+    advice:[{h:'练习用语言代替沉默',b:'每次有话想说却忍住时，给自己三秒钟，试着用一句话说出来。不需要说得多好，只需要说出来。你会发现，开口比你想象的更能让关系升温。'},{h:'允许自己休息',b:'你习惯了永远待命、永远可靠。给自己规定一段"不需要守护任何人"的时间，哪怕只是一个下午。休息不是懈怠，是让你明天守护得更久。'},{h:'分辨"责任"与"自我惩罚"',b:'你有时会把所有发生的不好的事都揽到自己身上。问问自己：这件事真的是我的责任吗？还是我只是习惯了扛着？有些重量，不是你该背的。'}],
+    peers:['霍去病','年羹尧','太史慈'],
+    books:[{t:'投名状',a:'（电影）',r:'前世你的忠义与代价的最好注脚'},{t:'活着',a:'余华',r:'理解笃定与承担的深层力量'},{t:'非暴力沟通',a:'马歇尔·卢森堡',r:'学会把心里的话好好说出来'}],
+    compat:{hou:70,gong:80,mou:60,fei:50,jian:45,tai:55}
+  },
+  fei:{
+    name:'宠冠六宫妃嫔',badge:'柔情御心型',
+    origin:'正三品 · 六宫之首妃',
+    tagline:'"以柔克刚，以情动人——你从来不是最强的那个，却总是活得最好的那个。"',
+    traits:[{l:'核心气质',v:'灵动·温柔'},{l:'处事方式',v:'以情感化'},{l:'内心渴望',v:'被爱与安全感'},{l:'潜在隐患',v:'过度依赖情感判断'}],
+    preview:'你前世是宫中最受宠的妃嫔——不是靠权谋，而是靠真实的情感与人格魅力。你有一种让人愿意靠近的天然温度，总能在最复杂的局面里找到最人心的那根弦……',
+    full:'<p>你前世活在那个金笼子里，却活得比很多人自由——因为你从不假装，从不刻意，你只是做自己。而恰恰是这份真实，让你在满是表演的宫廷里显得格外特别。人们愿意亲近你，不是因为你有权势，而是因为你让他们感到温暖。</p><p>你的天赋是共情。你能感受到别人话语背后的情绪，能在对方还没开口时就知道他需要什么。这让你在人际关系里如鱼得水，也让你有时候会被别人的情绪带着走，忘了自己原本的方向。</p><p>宠妃的困境，是安全感的脆弱。你的一切都依赖于那份情感连接还在不在，一旦感到被忽视或被抛弃，内心的风浪会大过任何人想象的。你不是不坚强，你只是对情感太敏感，太在乎了。</p><p>今生，你是那个朋友圈里最能让人感到被温暖的人，是那个在聚会里让所有人都觉得被照顾到的人，也是那个最需要被人好好爱护却很少说出口的人。你的温柔是这个世界需要的，但别忘了留一份给自己。</p><p>你前世总是给予，却很少索取。今生，请允许自己有需要的时候，大声说出来——真正爱你的人，不会因为你"需要"而离开。</p>',
+    dims:[{l:'感性',r:'理性',p:15},{l:'内向',r:'外向',p:72},{l:'守成',r:'进取',p:38},{l:'顺从',r:'主导',p:42},{l:'隐忍',r:'直言',p:55}],
+    advice:[{h:'建立"情绪缓冲带"',b:'当你感到被忽视或不安时，在回应之前给自己十分钟：写下你的感受，看清楚哪些是真实的信号，哪些是旧伤的投射。这十分钟会让你的回应更有力量，而不是更受伤。'},{h:'每月做一件"只为自己"的事',b:'找一件不需要别人参与、不为了讨好任何人的事，认认真真做一次。你会发现，不依赖他人的快乐，才是最稳固的安全感来源。'},{h:'练习区分"我爱你"和"我需要你"',b:'你的情感非常深厚，但有时候爱与依赖会混在一起。试着问自己：我对这个人的情感，是因为他让我成为更好的自己，还是因为没有他我就不安？这个问题，会让你的关系更健康。'}],
+    peers:['赵飞燕','杨贵妃','甄嬛（早期）'],
+    books:[{t:'倾城之恋',a:'张爱玲',r:'懂得以情动人背后的代价'},{t:'傲慢与偏见',a:'简·奥斯汀',r:'看见情感智慧如何改变命运'},{t:'蛤蟆先生去看心理医生',a:'罗伯特·戴博德',r:'理解自己情感模式的起源'}],
+    compat:{gong:75,hou:55,wei:50,mou:45,tai:60,jian:40}
+  },
+  jian:{
+    name:'暗卫首领',badge:'暗影幕后型',
+    origin:'无品阶 · 影卫统领',
+    tagline:'"最危险的人，是那个你以为不存在的人——你见过所有人最真实的面目，却从未让任何人见过你的。"',
+    traits:[{l:'核心气质',v:'沉静·缜密'},{l:'处事方式',v:'以信息为武器'},{l:'内心渴望',v:'不被掌控的自由'},{l:'潜在隐患',v:'难以放下戒备'}],
+    preview:'你前世是宫中的暗卫首领——没有人知道你真正做过什么，但宫里没有任何一个秘密能瞒过你。你活在所有人的视野盲区，却掌握着最多的筹码……',
+    full:'<p>你前世存在于宫廷最隐秘的角落，比任何一个有名有姓的大臣都更了解这个宫廷的运转方式。你知道谁在撒谎、谁在结党、谁的笑容背后藏着刀。这些知识，是你的保命符，也是你的牢笼。</p><p>你的天赋是观察。你能在极短的时间内读取环境中最细微的信号，能在一场对话里找到最关键的漏洞，能用最小的代价换取最多的信息。这种能力，在任何时代都价值连城——只是很少有人会公开承认他们有多需要你。</p><p>暗卫首领的困境，是永远的孤独。你太了解人性的阴暗，太熟悉背叛的滋味，以至于你建起了一堵比城墙还厚的内心防线。不是因为你冷漠，恰恰相反——你曾经也相信过，被那个相信灼伤了，就再也不敢轻易相信了。</p><p>今生，你是那个在一群人里最难被真正摸透的人，是那个看起来什么都无所谓却其实观察了所有细节的人，也是那个在深夜最容易感到一种说不清来处的疲倦的人。你的洞察力是礼物，你值得用它来找到那个真正安全的人，然后，试着放下。</p>',
+    dims:[{l:'感性',r:'理性',p:78},{l:'内向',r:'外向',p:15},{l:'守成',r:'进取',p:60},{l:'顺从',r:'主导',p:65},{l:'隐忍',r:'直言',p:20}],
+    advice:[{h:'找一件"只属于自己"不需要价值的事',b:'你的大脑习惯了功能性思考——这件事有没有用？这个人值不值得信任？试着每周留出一段时间做一件毫无"战略价值"的事，允许自己存在于纯粹的当下。'},{h:'"被看见"的练习',b:'每天试着让一个人真正看见你一次——不是你的能力，而是你这个人。可以很小：说一个真实的感受，分享一个真正喜欢的东西。一点一点，拆掉那堵墙。'},{h:'区分"警惕"与"封闭"',b:'你的警惕来自真实的经历，是值得尊重的保护机制。但偶尔问自己：我现在的戒备，是在保护自己，还是在阻止一件好事发生？这个问题，会帮你找到那个刚好合适的开口。'}],
+    peers:['韦小宝（内心）','鱼玄机','荆轲'],
+    books:[{t:'局外人',a:'加缪',r:'最懂你那种与世界之间微妙距离感的书'},{t:'白夜行',a:'东野圭吾',r:'关于秘密与孤独最深刻的注解'},{t:'依恋理论',a:'约翰·鲍尔比',r:'理解你的防御模式从何而来'}],
+    compat:{mou:75,wei:45,hou:50,fei:40,gong:55,tai:60}
+  },
+  gong:{
+    name:'资深宫女姑姑',badge:'以柔守正型',
+    origin:'六品 · 掌事宫女',
+    tagline:'"宫廷中真正长寿的，从来不是最强的那个，而是最懂得与人相处、不动声色活下去的那个。"',
+    traits:[{l:'核心气质',v:'温厚·坚韧'},{l:'处事方式',v:'以柔克刚，不显山露水'},{l:'内心渴望',v:'内心平静与安全'},{l:'潜在隐患',v:'压抑自我需求'}],
+    preview:'你前世是宫中最德高望重的掌事姑姑——见过最多的风雨，送走了最多的人，却始终安然留在原地。你的智慧不在谋算，而在于懂得顺势而为……',
+    full:'<p>你前世在那个宫廷里活得比任何人都长、比任何人都稳。不是因为你运气好，而是因为你有一种极其难得的能力：你能在风暴里找到最平静的眼，然后待在那里，不动声色。</p><p>你的天赋是稳定。当别人乱了方寸，你还能清醒；当别人失去依靠，你还在原地。你不是没有情绪，你只是比大多数人更懂得如何与情绪共处。这种稳定，让身边所有人都不由自主地想靠近你、依赖你。</p><p>掌事姑姑的困境，是习惯了压抑。你太善于体察别人的需求，以至于久而久之，你自己的需求变得越来越模糊——不是真的没有，只是说出来好像显得多余，或者说了也没人在意。于是你把它们藏了起来，告诉自己：没事，我可以。</p><p>今生，你是那个在所有混乱里最先稳下来的人，是那个身边人出了事第一个想打电话给你的人，也是那个最少把自己的难处说出来的人。你的稳定是宝贵的，但你也值得有一个人托住你。</p><p>你前世最大的遗憾，是活得太周全、太为别人，却少了几分为自己而活的勇气。今生，请给自己一点任性的空间。</p>',
+    dims:[{l:'感性',r:'理性',p:35},{l:'内向',r:'外向',p:30},{l:'守成',r:'进取',p:25},{l:'顺从',r:'主导',p:38},{l:'隐忍',r:'直言',p:28}],
+    advice:[{h:'把"我没事"换成"我需要……"',b:'下次当你想说"没事，我可以"的时候，先停一秒，问自己：我真的没事吗？我需要的是什么？试着把那个"需要"说出来，哪怕只是"我需要被听见一下"。'},{h:'每月做一件"不为任何人"的事',b:'找一件只因为自己喜欢就去做的事，不需要对任何人有用，不需要被谁看见。这件事会帮你记起，你也是一个有自己需求和喜好的人。'},{h:'练习在关系里说"不"',b:'你善于体察别人，因此很难拒绝他人的需求。试着每周说一次"这次不行"——不需要理由，只是因为你不想。你会发现，真正重要的关系，不会因为一次拒绝而破裂。'}],
+    peers:['平儿','袭人','嬷嬷（红楼梦中）'],
+    books:[{t:'红楼梦',a:'曹雪芹',r:'那些在宫廷与大家族里以柔克刚的女性智慧'},{t:'当下的力量',a:'埃克哈特·托利',r:'学会活在当下，放下过多的担忧'},{t:'边界感',a:'内德拉·塔瓦布',r:'练习温柔但坚定地守住自己的边界'}],
+    compat:{wei:80,fei:75,hou:65,mou:50,jian:55,tai:70}
+  },
+  tai:{
+    name:'太监总管',badge:'八面玲珑型',
+    origin:'从三品 · 内务府总管太监',
+    tagline:'"在夹缝中生存，是一门艺术——而你，把它练成了宫廷里最难被取代的本事。"',
+    traits:[{l:'核心气质',v:'圆融·识时务'},{l:'处事方式',v:'左右逢源'},{l:'内心渴望',v:'稳定与不被边缘化'},{l:'潜在隐患',v:'内心深处的委屈无处安放'}],
+    preview:'你前世是宫中最八面玲珑的太监总管——没有人比你更懂得宫廷的生存法则，没有人比你更清楚如何让所有人都觉得你是自己人……',
+    full:'<p>你前世在那个宫廷里活得不容易，但活得很精彩。你没有先天的优势，你是靠着极度敏锐的人情感知和日积月累的圆融处世，一步一步走到了别人走不到的地方。你知道什么时候该低头，什么时候该进一步，什么时候一句话能解开死局。</p><p>你的天赋是情商。你能在极短的时间内感知到一个房间里的情绪气候，能在对话里找到让所有人都台阶下的那句话，能让截然不同的人都觉得你和他们是一边的。这是生存的智慧，也是一种深刻的人性洞见。</p><p>太监总管的困境，是内心深处无处安放的委屈。你太善于适应别人，以至于久而久之你自己都不确定：我真正想要的是什么？你学会了把自己的情绪管理得滴水不漏，但那些没有被说出来的委屈、那些咽下去的不甘，都安安静静地堆在心里某个角落。</p><p>今生，你是那个人缘最好但也最难被看穿的人，是那个在任何场合都能找到话题切入的人，也是那个深夜一个人时会突然感到一种说不清楚的虚空感的人。你的适应力是无价的，但你也值得找到一个不需要表演、不需要管理形象的地方。</p>',
+    dims:[{l:'感性',r:'理性',p:45},{l:'内向',r:'外向',p:78},{l:'守成',r:'进取',p:42},{l:'顺从',r:'主导',p:35},{l:'隐忍',r:'直言',p:22}],
+    advice:[{h:'给内心的委屈一个出口',b:'找一个绝对安全的地方——日记、一个只有你自己知道的备忘录——把那些咽下去的话写出来。不是为了解决，只是让它们被看见一次。你会发现，写完之后轻很多。'},{h:'找到一件"不管别人怎么看"的事',b:'找一件你真正喜欢但可能"不够体面"或"不够用"的事，认真去做它。这件事会帮你记起，你是一个有独立喜好的人，不只是别人眼里的那个角色。'},{h:'允许自己"不合群"一次',b:'下次有个聚会或场合，试着不去维持那个"八面玲珑"的形象，就做一个普通的、不特别有趣的、不照顾所有人情绪的人。感受一下，那种自由是什么味道。'}],
+    peers:['李莲英','《甄嬛传》里的苏培盛','《金枝欲孽》里的如妃'],
+    books:[{t:'人性的弱点',a:'卡耐基',r:'了解人情世故背后的心理学本质'},{t:'也许你该找个人聊聊',a:'洛莉·戈特利布',r:'找到那个内心深处真实的自己'},{t:'高敏感是种天赋',a:'伊尔斯·桑德',r:'读懂你那份对他人情绪极度敏感的本质'}],
+    compat:{gong:70,fei:60,jian:60,wei:55,hou:40,mou:35}
+  }
+};
+const NUMS=['一','二','三','四','五','六','七','八','九','十'];
+let cur=0,ans=new Array(QS.length).fill(null);
+
+// ── Progress save ──
+function saveProgress(){try{localStorage.setItem('lq_ans',JSON.stringify(ans));localStorage.setItem('lq_cur',cur);}catch(e){}}
+function loadProgress(){try{const a=localStorage.getItem('lq_ans');const c=localStorage.getItem('lq_cur');if(a&&c){ans=JSON.parse(a);cur=parseInt(c);return true;}}catch(e){}return false;}
+function clearProgress(){try{localStorage.removeItem('lq_ans');localStorage.removeItem('lq_cur');}catch(e){}}
+
+// ── Share / referral ──
+let shareCount=0;
+function getShareCount(){try{return parseInt(localStorage.getItem('lq_share')||'0');}catch(e){return 0;}}
+function incShareCount(){trackShare();try{shareCount=Math.min(3,getShareCount()+1);localStorage.setItem('lq_share',shareCount);updateShareUI();}catch(e){}}
+function updateShareUI(){
+  shareCount=getShareCount();
+  const el=document.getElementById('share-count');
+  const prog=document.getElementById('share-prog');
+  if(el)el.textContent=shareCount;
+  if(prog)prog.style.width=Math.round(shareCount/3*100)+'%';
+  if(shareCount>=3){doFreeUnlock();}
+}
+function doFreeUnlock(){
+  document.getElementById('paywall').style.display='none';
+  var fr=document.getElementById('full-report');
+  fr.style.display='block';
+  const ov=document.querySelector('.res-blur-overlay');
+  if(ov)ov.style.display='none';
+  showToast('分享成功！完整宫廷命格档案已为你解锁 🎁',2500);
+  setTimeout(function(){
+    document.querySelectorAll('.dim-fill').forEach(function(el){el.style.width=el.dataset.pct+'%';});
+  },200);
+}
+function handleShare(){
+  const url=window.location.href;
+  const text='测测你前世在宫中是何职位？皇后、谋士、侍卫、太监总管……10道题揭开你的前世宫廷身份！';
+  if(navigator.share){
+    navigator.share({title:'前世你在宫中是何职位？',text:text,url:url}).then(function(){incShareCount();}).catch(function(){});
+  } else {
+    navigator.clipboard.writeText(url+'\n'+text).then(function(){
+      incShareCount();
+      const btn=document.getElementById('btn-share');
+      const orig=btn.textContent;
+      btn.textContent='已复制！分享给好友吧 ✓';
+      setTimeout(function(){btn.textContent=orig;},2000);
+    }).catch(function(){
+      incShareCount();
+      alert('链接已复制：'+url);
+    });
+  }
+}
+
+// ── Countdown ──
+let cdEnd=null;
+function startCountdown(){
+  try{
+    const saved=localStorage.getItem('lq_cd_end');
+    if(saved){cdEnd=parseInt(saved);}
+    else{cdEnd=Date.now()+30*60*1000;localStorage.setItem('lq_cd_end',cdEnd);}
+  }catch(e){cdEnd=Date.now()+30*60*1000;}
+  tickCountdown();
+}
+function tickCountdown(){
+  const bar=document.getElementById('countdown-bar');
+  const el=document.getElementById('cd-time');
+  if(!el||!bar)return;
+  const left=cdEnd-Date.now();
+  if(left<=0){bar.style.display='none';return;}
+  const m=Math.floor(left/60000);
+  const s=Math.floor((left%60000)/1000);
+  el.textContent=(m<10?'0':'')+m+':'+(s<10?'0':'')+s;
+  setTimeout(tickCountdown,1000);
+}
+
+function show(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById('screen-'+id).classList.add('active');
+  window.scrollTo(0,0);
+}
+
+function startQuiz(){
+  show('quiz');
+  if(loadProgress()&&cur>0){
+    if(!confirm('检测到上次未完成的进度（第'+(cur+1)+'题），是否继续？')){
+      cur=0;ans=new Array(QS.length).fill(null);clearProgress();
+    }
+  }
+  renderQ();
+}
+
+function renderQ(){
+  const body=document.querySelector('.quiz-body');
+  if(body){body.classList.add('slide-out');}
+  setTimeout(function(){
+    const q=QS[cur];
+    const pct=Math.round(cur/QS.length*100);
+    document.getElementById('q-counter').textContent='第 '+(cur+1)+' 题 / 共 '+QS.length+' 题';
+    document.getElementById('q-pct').textContent=pct+'%';
+    document.getElementById('prog').style.width=pct+'%';
+    document.getElementById('q-num').textContent='第'+NUMS[cur]+'题';
+    document.getElementById('q-text').textContent=q.t;
+    const labels=['A','B','C','D'];
+    document.getElementById('options').innerHTML=q.o.map(function(o,i){
+      return '<button class="opt'+(ans[cur]===i?' selected':'')+'" data-i="'+i+'">'
+        +'<span class="opt-badge">'+labels[i]+'</span>'
+        +'<span>'+o.t+'</span>'
+        +'</button>';
+    }).join('');
+    document.querySelectorAll('.opt').forEach(function(btn){
+      btn.addEventListener('click',function(){selectOpt(parseInt(this.dataset.i));});
+    });
+    document.getElementById('btn-back').disabled=cur===0;
+    const nxt=document.getElementById('btn-next');
+    nxt.disabled=ans[cur]===null;
+    nxt.textContent=cur===QS.length-1?'查看结果 ✦':'下一题 →';
+    nxt.className='nav-btn btn-next'+(cur===QS.length-1?' last':'');
+    if(body){
+      body.classList.remove('slide-out');
+      body.classList.add('slide-in');
+      requestAnimationFrame(function(){
+        requestAnimationFrame(function(){
+          body.classList.remove('slide-in');
+        });
+      });
+    }
+  },180);
+}
+
+function selectOpt(i){
+  ans[cur]=i;
+  saveProgress();
+  showSaveBanner();
+  // Only update option highlight, no slide animation
+  document.querySelectorAll('.opt').forEach(function(btn,idx){
+    btn.classList.toggle('selected', idx===i);
+    btn.querySelector('.opt-badge').style.background = idx===i ? '#b8933f' : '';
+    btn.querySelector('.opt-badge').style.borderColor = idx===i ? '#b8933f' : '';
+    btn.querySelector('.opt-badge').style.color = idx===i ? '#fff' : '';
+  });
+  // Enable next button
+  var nxt=document.getElementById('btn-next');
+  if(nxt){
+    nxt.disabled=false;
+    nxt.textContent=cur===QS.length-1?'查看结果 ✦':'下一题 →';
+    nxt.className='nav-btn btn-next'+(cur===QS.length-1?' last':'');
+  }
+}
+function prevQ(){if(cur>0){cur--;saveProgress();renderQ();}}
+
+function nextQ(){
+  if(ans[cur]===null)return;
+  if(cur<QS.length-1){cur++;saveProgress();renderQ();}
+  else showLoading();
+}
+
+const loadingMsgs=['正在翻阅前世宫廷档案…','推演你的命格轨迹…','对照宫廷花名册中…','前世身份即将揭晓…'];
+let lIdx=0,lTimer=null;
+function showLoading(){
+  show('loading');
+  lIdx=0;
+  document.getElementById('loading-text').textContent=loadingMsgs[0];
+  lTimer=setInterval(function(){
+    lIdx=(lIdx+1)%loadingMsgs.length;
+    document.getElementById('loading-text').textContent=loadingMsgs[lIdx];
+  },700);
+  setTimeout(function(){clearInterval(lTimer);buildResult();},2800);
+}
+
+function buildResult(){
+  const tot={};
+  ans.forEach(function(a,qi){
+    if(a===null)return;
+    const sc=QS[qi].o[a].s;
+    for(const k in sc)tot[k]=(tot[k]||0)+sc[k];
+  });
+  const winner=Object.entries(tot).sort(function(a,b){return b[1]-a[1];})[0][0];
+  const ch=CHARS[winner];
+  window._currentCh=ch;
+  document.getElementById('r-badge').textContent=ch.badge;
+  var badgeEl=document.getElementById('r-badge');
+  badgeEl.className='res-badge badge-'+ch.badge;
+  var emojiEl=document.getElementById('r-emoji');
+  if(emojiEl)emojiEl.textContent=CHAR_EMOJI[winner]||'📚';
+  var scoreEl=document.getElementById('r-score-badge');
+  if(scoreEl){var sc=calcMatchScore(tot,winner);scoreEl.textContent='命格匹配度 '+sc+'%';}
+  var nameEl=document.getElementById('r-name');
+  nameEl.textContent='';
+  document.getElementById('r-origin').textContent=ch.origin;
+  trackTest(winner);
+  document.getElementById('r-tagline').textContent=ch.tagline;
+  document.getElementById('r-traits').innerHTML=ch.traits.map(function(t){
+    return '<div class="trait-card"><div class="trait-lbl">'+t.l+'</div><div class="trait-val">'+t.v+'</div></div>';
+  }).join('');
+  document.getElementById('r-preview-text').textContent=ch.preview;
+  document.getElementById('r-full-desc').innerHTML=ch.full;
+  document.getElementById('r-dims').innerHTML=ch.dims.map(function(d){
+    return '<div class="dim-item"><div class="dim-row"><span>'+d.l+'</span><span>'+d.r+'</span></div>'
+      +'<div class="dim-track"><div class="dim-fill" style="width:0%" data-pct="'+d.p+'"></div></div></div>';
+  }).join('');
+  document.getElementById('r-advice').innerHTML=ch.advice.map(function(a){
+    return '<div class="advice-card"><div class="advice-head"><span class="advice-dot"></span>'+a.h+'</div>'
+      +'<div class="advice-body">'+a.b+'</div></div>';
+  }).join('');
+  document.getElementById('r-peers').innerHTML=ch.peers.map(function(p){
+    return '<span class="peer-tag">'+p+'</span>';
+  }).join('');
+  show('result');
+  startCountdown();
+  updateShareUI();
+  setTimeout(function(){typewriterEffect(document.getElementById('r-name'),ch.name,80);},200);
+  renderCompat(ch,winner);
+  renderBooks(ch);
+  setTimeout(function(){
+    document.querySelectorAll('.dim-fill').forEach(function(el){
+      el.style.width=el.dataset.pct+'%';
+    });
+  },300);
+}
+
+function openModal(){document.getElementById('modal').classList.add('open');}
+function closeModal(){document.getElementById('modal').classList.remove('open');}
+
+function verifyCode(){
+  const v=document.getElementById('code-input').value.trim();
+  const err=document.getElementById('modal-err');
+  if(v.length!==6){err.textContent='请输入6位解锁码';return;}
+  if(adminCodes.indexOf(v.toUpperCase())!==-1){
+    closeModal();
+    trackUnlock();
+    document.getElementById('paywall').style.display='none';
+    var fr=document.getElementById('full-report');
+    fr.style.display='block';
+    fr.classList.add('unlocking');
+    var ov=document.querySelector('.res-blur-overlay');
+    if(ov)ov.style.display='none';
+    showToast('解锁成功！完整宫廷命格档案已开启 ✦',2500);
+    setTimeout(function(){
+      document.querySelectorAll('.dim-fill').forEach(function(el){el.style.width=el.dataset.pct+'%';});
+      document.querySelectorAll('.compat-fill').forEach(function(el){el.style.width=el.dataset.pct+'%';el.style.background=el.dataset.color||'#b8933f';});
+    },300);
+  } else {
+    err.textContent='解锁码无效，请检查后重试';
+  }
+}
+
+function restart(){
+  cur=0;ans=new Array(QS.length).fill(null);clearProgress();
+  document.getElementById('paywall').style.display='';
+  document.getElementById('full-report').style.display='none';
+  document.getElementById('code-input').value='';
+  document.getElementById('modal-err').textContent='';
+  show('cover');
+}
+
+document.addEventListener('DOMContentLoaded',function(){
+  document.getElementById('btn-start').addEventListener('click',startQuiz);
+  document.getElementById('btn-back').addEventListener('click',prevQ);
+  document.getElementById('btn-next').addEventListener('click',nextQ);
+  document.getElementById('btn-unlock').addEventListener('click',openPayScreen);
+  document.getElementById('btn-confirm').addEventListener('click',verifyCode);
+  document.getElementById('btn-cancel').addEventListener('click',closeModal);
+  document.getElementById('btn-retry').addEventListener('click',restart);
+  document.getElementById('btn-share').addEventListener('click',handleShare);
+  document.getElementById('btn-pay-back').addEventListener('click',closePayScreen);
+  document.getElementById('btn-pay-confirm').addEventListener('click',confirmPayCode);
+  document.getElementById('pay-code-input').addEventListener('keydown',function(e){if(e.key==='Enter')confirmPayCode();});
+  document.querySelectorAll('.pay-method-tab').forEach(function(t){
+    t.addEventListener('click',function(){switchPayMethod(this.dataset.method);});
+  });
+  document.getElementById('btn-show-card').addEventListener('click',function(){if(window._currentCh)openShareCard(window._currentCh);});
+  document.getElementById('btn-card-close').addEventListener('click',function(){document.getElementById('card-screen').classList.remove('open');});
+  document.getElementById('btn-card-close2').addEventListener('click',function(){document.getElementById('card-screen').classList.remove('open');});
+  document.getElementById('btn-card-share').addEventListener('click',function(){
+    var url=window.location.href;
+    navigator.clipboard.writeText(url).then(function(){alert('链接已复制！请截图此卡片后发到小红书，并在文案中附上链接 ✦');}).catch(function(){alert('请截图此卡片发到小红书 #测测你的前世宫廷职位');});
+  });
+  document.getElementById('btn-admin-entry').addEventListener('click',openAdmin);
+  document.getElementById('btn-admin-close').addEventListener('click',closeAdmin);
+  document.getElementById('btn-gen-codes').addEventListener('click',generateCodes);
+  document.getElementById('btn-copy-codes').addEventListener('click',copyAllCodes);
+  initParticles();
+  initSwipe();
+  // animate social proof counter
+  var counterEl=document.querySelector('.paywall-social strong');
+  if(counterEl)animateCounter(counterEl,3261,1800);
+});
+
+// ── Compat chart ──────────────────────────────────────
+function renderCompat(ch,winner){
+  const el=document.getElementById('r-compat');
+  if(!el||!ch.compat)return;
+  const entries=Object.entries(ch.compat).sort(function(a,b){return b[1]-a[1];});
+  const colors=['#d4ad5a','#c8a348','#b8933f','#a07832','#886028','#6e4c1e','#543815','#3a260e'];
+  el.innerHTML=entries.map(function(e,i){
+    var displayName=CHARS[e[0]]?CHARS[e[0]].name:e[0];
+    return '<div class="compat-item">'
+      +'<span class="compat-name">'+displayName+'</span>'
+      +'<div class="compat-track"><div class="compat-fill" style="width:0%" data-pct="'+e[1]+'" data-color="'+colors[i]+'"></div></div>'
+      +'<span class="compat-pct">'+e[1]+'%</span>'
+      +'</div>';
+  }).join('');
+  setTimeout(function(){
+    document.querySelectorAll('.compat-fill').forEach(function(el){
+      el.style.width=el.dataset.pct+'%';
+      el.style.background=el.dataset.color;
+    });
+  },400);
+}
+
+// ── Books ──────────────────────────────────────────────
+function renderBooks(ch){
+  const el=document.getElementById('r-books');
+  if(!el||!ch.books)return;
+  el.innerHTML=ch.books.map(function(b,i){
+    var title=b[0]||b.t||'';
+    var author=b[1]||b.a||'';
+    var reason=b[2]||b.r||'';
+    return '<div class="book-item">'
+      +'<div class="book-num">'+(i+1)+'</div>'
+      +'<div class="book-info">'
+      +'<div class="book-title">'+title+(author?' · '+author:'')+'</div>'
+      +'<div class="book-reason">'+reason+'</div>'
+      +'</div></div>';
+  }).join('');
+}
+
+// ── Typewriter for result name ─────────────────────────
+function typewriterEffect(el,text,speed){
+  el.textContent='';
+  var cursor=document.createElement('span');
+  cursor.className='typewriter-cursor';
+  el.parentNode.insertBefore(cursor,el.nextSibling);
+  var i=0;
+  function tick(){
+    if(i<text.length){el.textContent+=text[i++];setTimeout(tick,speed);}
+    else{setTimeout(function(){if(cursor.parentNode)cursor.parentNode.removeChild(cursor);},800);}
+  }
+  tick();
+}
+
+// ── Share card ─────────────────────────────────────────
+var currentChar=null;
+function openShareCard(ch){
+  currentChar=ch;
+  // emoji
+  var emojiEl=document.getElementById('r-emoji');
+  var cardEmoji=document.getElementById('card-emoji');
+  if(cardEmoji&&emojiEl)cardEmoji.textContent=emojiEl.textContent||'👑';
+  // name, type, rank
+  document.getElementById('card-name').textContent=ch.name;
+  document.getElementById('card-type').textContent=ch.badge;
+  var rankEl=document.getElementById('card-rank');
+  if(rankEl)rankEl.textContent=ch.origin||'';
+  // quote - strip quotes if present
+  var q=ch.tagline||'';
+  q=q.replace(/^["「『\u201c\u2018]/,'').replace(/["」』\u201d\u2019]$/,'');
+  document.getElementById('card-quote').textContent=q;
+  // traits (up to 4)
+  var traitsEl=document.getElementById('card-traits');
+  if(traitsEl){
+    traitsEl.innerHTML=(ch.traits||[]).slice(0,4).map(function(t){
+      return '<div class="pc-trait"><div class="pc-trait-l">'+t.l+'</div><div class="pc-trait-v">'+t.v+'</div></div>';
+    }).join('');
+  }
+  document.getElementById('card-screen').classList.add('open');
+}
+
+// audio removed
+
+// ── Admin panel ────────────────────────────────────────
+var ADMIN_PASS='admin888';
+var adminCodes=[];
+try{adminCodes=JSON.parse(localStorage.getItem('lq_admin_codes')||'["LIT001"]');}catch(e){adminCodes=['LIT001'];}
+
+function saveAdminCodes(){try{localStorage.setItem('lq_admin_codes',JSON.stringify(adminCodes));}catch(e){}}
+
+function openAdmin(){
+  var pass=prompt('请输入管理密码');
+  if(pass!==ADMIN_PASS){if(pass!==null)alert('密码错误');return;}
+  refreshAdminStats();
+  document.getElementById('admin-panel').classList.add('open');
+}
+function closeAdmin(){document.getElementById('admin-panel').classList.remove('open');}
+
+function refreshAdminStats(){
+  try{
+    var total=parseInt(localStorage.getItem('lq_total_tests')||'0');
+    var unlocked=parseInt(localStorage.getItem('lq_total_unlocked')||'0');
+    var shares=parseInt(localStorage.getItem('lq_total_shares')||'0');
+    document.getElementById('adm-total').textContent=total;
+    document.getElementById('adm-unlocked').textContent=unlocked;
+    document.getElementById('adm-codes').textContent=adminCodes.length;
+    document.getElementById('adm-shares').textContent=shares;
+    
+    var dist=JSON.parse(localStorage.getItem('lq_char_dist')||'{}');
+    var keys=Object.keys(CHARS);
+    var max=Math.max.apply(null,keys.map(function(k){return dist[k]||0;}).concat([1]));
+    document.getElementById('adm-dist').innerHTML=keys.map(function(k){
+      var n=dist[k]||0;
+      var pct=Math.round(n/max*100);
+      return '<div class="admin-bar-item">'
+        +'<span class="admin-bar-label">'+CHARS[k].name+'</span>'
+        +'<div class="admin-bar-track"><div class="admin-bar-fill" style="width:'+pct+'%"></div></div>'
+        +'<span class="admin-bar-count">'+n+'</span>'
+        +'</div>';
+    }).join('');
+    
+    document.getElementById('adm-codes-list').textContent=adminCodes.join('\n')||'暂无解锁码';
+  }catch(e){}
+}
+
+function generateCodes(){
+  var n=parseInt(document.getElementById('adm-code-n').value)||5;
+  n=Math.min(50,Math.max(1,n));
+  var chars='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+  for(var i=0;i<n;i++){
+    var code='';
+    for(var j=0;j<6;j++)code+=chars[Math.floor(Math.random()*chars.length)];
+    if(adminCodes.indexOf(code)===-1)adminCodes.push(code);
+  }
+  saveAdminCodes();
+  refreshAdminStats();
+}
+
+function copyAllCodes(){
+  var text=adminCodes.join('\n');
+  navigator.clipboard.writeText(text).then(function(){
+    var btn=document.getElementById('btn-copy-codes');
+    var orig=btn.textContent;btn.textContent='已复制 ✓';
+    setTimeout(function(){btn.textContent=orig;},1500);
+  }).catch(function(){alert(text);});
+}
+
+// ── Tracking helpers ───────────────────────────────────
+function trackTest(winner){
+  try{
+    var t=parseInt(localStorage.getItem('lq_total_tests')||'0')+1;
+    localStorage.setItem('lq_total_tests',t);
+    var dist=JSON.parse(localStorage.getItem('lq_char_dist')||'{}');
+    dist[winner]=(dist[winner]||0)+1;
+    localStorage.setItem('lq_char_dist',JSON.stringify(dist));
+  }catch(e){}
+}
+function trackUnlock(){
+  try{var u=parseInt(localStorage.getItem('lq_total_unlocked')||'0')+1;localStorage.setItem('lq_total_unlocked',u);}catch(e){}
+}
+function trackShare(){
+  try{var s=parseInt(localStorage.getItem('lq_total_shares')||'0')+1;localStorage.setItem('lq_total_shares',s);}catch(e){}
+}
+
+
+// ── Character emoji map ──────────────────────────────
+var CHAR_EMOJI={
+  hou:'👑',mou:'♟️',wei:'⚔️',fei:'🌸',
+  jian:'🌑',gong:'🪷',tai:'🎭'
+};
+
+// ── Toast ─────────────────────────────────────────────
+var toastTimer=null;
+function showToast(msg,duration){
+  duration=duration||2000;
+  var t=document.getElementById('toast');
+  if(!t)return;
+  t.textContent=msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(function(){t.classList.remove('show');},duration);
+}
+
+// ── Cover canvas particles ────────────────────────────
+function initParticles(){
+  var canvas=document.getElementById('cover-canvas');
+  if(!canvas)return;
+  var ctx=canvas.getContext('2d');
+  var W,H,particles=[];
+  function resize(){
+    W=canvas.width=canvas.offsetWidth;
+    H=canvas.height=canvas.offsetHeight;
+  }
+  resize();
+  window.addEventListener('resize',resize);
+  var GOLD='rgba(184,147,63,';
+  for(var i=0;i<18;i++){
+    particles.push({
+      x:Math.random()*100,y:Math.random()*100+20,
+      size:Math.random()*2.5+0.8,
+      speed:0.2+Math.random()*0.4,
+      delay:Math.random()*4000,
+      born:Date.now()-Math.random()*4000,
+      opacity:0
+    });
+  }
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    var now=Date.now();
+    particles.forEach(function(p){
+      var age=(now-p.born)%5000;
+      var progress=age/5000;
+      var op=progress<0.1?progress*6:progress>0.85?(1-progress)*6.7:0.6;
+      op=Math.max(0,Math.min(1,op))*0.55;
+      ctx.beginPath();
+      ctx.arc(p.x/100*W,(p.y-progress*15)/100*H,p.size,0,Math.PI*2);
+      ctx.fillStyle=GOLD+op+')';
+      ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+}
+
+// ── Animated counter for social proof ────────────────
+function animateCounter(el,target,duration){
+  var start=0,startTime=null;
+  function step(ts){
+    if(!startTime)startTime=ts;
+    var progress=Math.min((ts-startTime)/duration,1);
+    var ease=1-Math.pow(1-progress,3);
+    el.textContent=Math.floor(ease*target).toLocaleString();
+    if(progress<1)requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+// ── Score badge calculation ──────────────────────────
+function calcMatchScore(tot,winner){
+  var winScore=tot[winner]||1;
+  var allScores=Object.values(tot);
+  var max=Math.max.apply(null,allScores);
+  var pct=Math.min(99,Math.max(60,Math.round(winScore/max*85+Math.random()*8+7)));
+  return pct;
+}
+
+// ── Touch swipe on quiz ──────────────────────────────
+var touchStartX=0;
+function initSwipe(){
+  var quiz=document.getElementById('screen-quiz');
+  if(!quiz)return;
+  quiz.addEventListener('touchstart',function(e){
+    touchStartX=e.touches[0].clientX;
+  },{passive:true});
+  quiz.addEventListener('touchend',function(e){
+    var dx=e.changedTouches[0].clientX-touchStartX;
+    if(Math.abs(dx)>60){
+      if(dx<0&&ans[cur]!==null)nextQ();
+      else if(dx>0)prevQ();
+    }
+  },{passive:true});
+}
+
+// ── Auto-save feedback ───────────────────────────────
+function showSaveBanner(){
+  var b=document.getElementById('save-banner');
+  if(!b)return;
+  b.classList.add('show');
+  setTimeout(function(){b.classList.remove('show');},1500);
+}
+
+
+
+// ── QR canvas (placeholder pattern) ──────────────────
+// In production, replace with a real <img src="your-qr.jpg">
+// This draws a visual placeholder that looks like a QR code
+function drawQRPlaceholder(canvasId, color){
+  var canvas=document.getElementById(canvasId);
+  if(!canvas)return;
+  var ctx=canvas.getContext('2d');
+  var S=180;canvas.width=S;canvas.height=S;
+  ctx.fillStyle='#f5f0e8';ctx.fillRect(0,0,S,S);
+  var c=color||'#1a1008';
+  // outer border
+  ctx.fillStyle=c;
+  ctx.fillRect(10,10,50,50);ctx.fillRect(120,10,50,50);ctx.fillRect(10,120,50,50);
+  ctx.fillStyle='#fff';
+  ctx.fillRect(18,18,34,34);ctx.fillRect(128,18,34,34);ctx.fillRect(18,128,34,34);
+  ctx.fillStyle=c;
+  ctx.fillRect(24,24,22,22);ctx.fillRect(134,24,22,22);ctx.fillRect(24,134,22,22);
+  // random data modules
+  var seed=42;
+  function rand(){seed=(seed*1664525+1013904223)&0xffffffff;return(seed>>>0)/0xffffffff;}
+  for(var r=0;r<18;r++){
+    for(var cc=0;cc<18;cc++){
+      var x=70+cc*6,y=10+r*6;
+      if(rand()>0.5){ctx.fillStyle=c;ctx.fillRect(x,y,5,5);}
+    }
+  }
+  for(var r2=9;r2<18;r2++){
+    for(var cc2=0;cc2<9;cc2++){
+      var x2=10+cc2*6,y2=70+r2*6;
+      if(rand()>0.5){ctx.fillStyle=c;ctx.fillRect(x2,y2,5,5);}
+    }
+  }
+  // center logo hint
+  ctx.fillStyle='rgba(192,57,43,0.9)';
+  ctx.font='bold 13px serif';ctx.textAlign='center';ctx.textBaseline='middle';
+  ctx.fillText('宫',90,90);
+}
+
+// ── Payment screen ────────────────────────────────────
+var currentMethod='wechat';
+
+function openPayScreen(){
+  document.getElementById('pay-screen').classList.add('open');
+  window.scrollTo(0,0);
+  drawQRPlaceholder('qr-canvas','#1a1208');
+}
+function closePayScreen(){
+  document.getElementById('pay-screen').classList.remove('open');
+}
+
+function switchPayMethod(method){
+  currentMethod=method;
+  document.querySelectorAll('.pay-method-tab').forEach(function(t){
+    t.classList.toggle('active',t.dataset.method===method);
+  });
+  document.getElementById('qr-method-name').textContent=method==='wechat'?'微信':'支付宝';
+  drawQRPlaceholder('qr-canvas',method==='wechat'?'#07c160':'#1677ff');
+}
+
+function confirmPayCode(){
+  var v=document.getElementById('pay-code-input').value.trim().toUpperCase();
+  var err=document.getElementById('pay-code-err');
+  if(v.length!==6){err.textContent='请输入6位解锁码';return;}
+  if(adminCodes.indexOf(v)!==-1){
+    closePayScreen();
+    closeModal();
+    trackUnlock();
+    document.getElementById('paywall').style.display='none';
+    var fr=document.getElementById('full-report');
+    fr.style.display='block';
+    var ov=document.querySelector('.res-blur-overlay');
+    if(ov)ov.style.display='none';
+    showToast('解锁成功！完整宫廷命格档案已开启 ✦',2500);
+    setTimeout(function(){
+      document.querySelectorAll('.dim-fill').forEach(function(el){el.style.width=el.dataset.pct+'%';});
+      document.querySelectorAll('.compat-fill').forEach(function(el){el.style.width=el.dataset.pct+'%';el.style.background=el.dataset.color||'#b8933f';});
+    },300);
+  } else {
+    err.textContent='解锁码无效，请检查后重试';
+    document.getElementById('pay-code-input').style.borderColor='rgba(224,112,112,0.5)';
+    setTimeout(function(){document.getElementById('pay-code-input').style.borderColor='';},2000);
+  }
+}
+
+</script>
+
+<!-- ══ ADMIN PANEL ══ -->
+<div class="admin-panel" id="admin-panel">
+  <div class="admin-header">
+    <span class="admin-title">管理后台</span>
+    <button class="admin-close" id="btn-admin-close">✕</button>
+  </div>
+  <div class="admin-stats">
+    <div class="stat-card"><div class="stat-lbl">总测试次数</div><div class="stat-val" id="adm-total">0</div></div>
+    <div class="stat-card"><div class="stat-lbl">已解锁次数</div><div class="stat-val" id="adm-unlocked">0</div></div>
+    <div class="stat-card"><div class="stat-lbl">有效解锁码</div><div class="stat-val" id="adm-codes">0</div></div>
+    <div class="stat-card"><div class="stat-lbl">分享次数</div><div class="stat-val" id="adm-shares">0</div></div>
+  </div>
+  <div class="admin-section-title" style="margin-bottom:10px">宫廷职位结果分布</div>
+  <div id="adm-dist"></div>
+  <div class="code-gen-section">
+    <div class="admin-section-title">解锁码管理</div>
+    <div class="code-gen-row">
+      <input class="code-gen-input" id="adm-code-n" type="number" value="5" min="1" max="50" placeholder="生成数量">
+      <button class="code-gen-btn" id="btn-gen-codes">批量生成</button>
+      <button class="code-gen-btn" id="btn-copy-codes">复制全部</button>
+    </div>
+    <div class="codes-list" id="adm-codes-list">点击"批量生成"创建解锁码</div>
+  </div>
+</div>
+
+</body>
+</html>
