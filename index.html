@@ -191,6 +191,9 @@ body::before{
   font-size:11px;color:var(--muted);
   text-align:center;letter-spacing:0.05em;
   position:relative;z-index:1;opacity:0.6;
+  cursor:default;
+  user-select:none;
+  -webkit-user-select:none;
 }
 
 /* ════════ QUIZ ════════ */
@@ -454,111 +457,61 @@ body::before{
 }
 .res-blur-label{font-size:11px;color:var(--zhu);letter-spacing:0.1em;opacity:0.7}
 
-/* ─── PAYWALL ─── */
+/* ════════ PAYWALL (inline code entry) ════════ */
 .paywall{
   margin:0 24px 24px;
   background:#fff;
   border:1px solid var(--border);
+  border-top:3px solid var(--zhu);
 }
-.countdown-bar{
-  background:rgba(192,57,43,0.06);
-  border:1px solid rgba(192,57,43,0.2);
-  padding:10px 14px;
-  display:flex;align-items:center;gap:10px;
-  margin-bottom:0;
+.pw-preview-title{
+  font-size:10px;letter-spacing:0.4em;color:var(--zhu);
+  text-transform:uppercase;padding:16px 20px 0;
+  font-family:'Noto Sans SC',sans-serif;font-weight:500;
+  display:flex;align-items:center;gap:8px;
 }
-.cd-icon{font-size:13px}
-.cd-text{font-size:12px;color:var(--ink2);flex:1;font-family:'Noto Sans SC',sans-serif}
-.cd-time{font-size:14px;font-weight:700;color:var(--zhu);font-family:'Noto Serif SC',serif;min-width:50px;text-align:right}
-.share-unlock{
-  background:var(--gold-pale);
-  border-bottom:1px solid var(--border);
-  padding:16px;
-}
-.share-unlock-title{
-  font-size:13px;font-weight:600;color:var(--ink);
-  margin-bottom:4px;display:flex;align-items:center;gap:6px;
-  font-family:'Noto Serif SC',serif;
-}
-.share-unlock-sub{font-size:12px;color:var(--muted);margin-bottom:12px;line-height:1.6;font-family:'Noto Sans SC',sans-serif}
-.share-steps{display:flex;gap:6px;margin-bottom:12px}
-.share-step{
-  flex:1;text-align:center;padding:8px 4px;
-  background:#fff;border:1px solid var(--border);
-  font-size:11px;color:var(--ink2);line-height:1.6;
-  font-family:'Noto Sans SC',sans-serif;
-}
-.share-step strong{display:block;font-size:15px;font-weight:700;color:var(--gold);font-family:'Noto Serif SC',serif}
-.share-progress-row{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:6px}
-.share-prog-track{height:3px;background:var(--border);margin-bottom:12px}
-.share-prog-fill{height:100%;background:var(--gold);transition:width 0.4s}
-.share-btn{
-  width:100%;padding:11px;
-  background:var(--ink);color:var(--silk);border:none;
-  font-size:13px;cursor:pointer;letter-spacing:0.12em;
-  font-family:'Noto Sans SC',sans-serif;
-  transition:background 0.15s;
-}
-.share-btn:hover{background:#3d2000}
-.paywall-top{
-  padding:24px 20px 18px;text-align:center;
-  border-bottom:1px solid var(--border);
-}
-.paywall-lock{
-  width:36px;height:36px;
-  background:var(--zhu-pale);
-  border:1px solid rgba(192,57,43,0.3);
-  display:flex;align-items:center;justify-content:center;
-  margin:0 auto 14px;font-size:16px;
-}
-.paywall-title{
-  font-family:'Noto Serif SC',serif;
-  font-size:17px;font-weight:700;color:var(--ink);
-  margin-bottom:6px;
-}
-.paywall-sub{font-size:12px;color:var(--muted);line-height:1.7;font-family:'Noto Sans SC',sans-serif}
-.paywall-features{padding:16px 20px}
+.pw-preview-title::before{content:'';width:3px;height:3px;background:var(--zhu);transform:rotate(45deg);flex-shrink:0}
+.paywall-features{padding:10px 20px 16px;border-bottom:1px solid var(--border)}
 .feature-item{
   display:flex;align-items:center;gap:10px;
-  padding:8px 0;border-bottom:1px solid var(--border);
+  padding:7px 0;border-bottom:1px solid var(--border);
   font-size:13px;color:var(--ink2);
   font-family:'Noto Sans SC',sans-serif;
 }
 .feature-item:last-child{border:none}
-.feature-dot{
-  width:5px;height:5px;background:var(--zhu);
-  transform:rotate(45deg);flex-shrink:0;
-}
-.paywall-cta{padding:16px 20px 20px}
-.price-row{
-  display:flex;align-items:baseline;gap:6px;margin-bottom:14px;
-  justify-content:center;
-}
-.price-main{
+.feature-dot{width:5px;height:5px;background:var(--zhu);transform:rotate(45deg);flex-shrink:0}
+.pw-code-area{padding:20px}
+.pw-code-label{
   font-family:'Noto Serif SC',serif;
-  font-size:2.2rem;font-weight:700;color:var(--zhu);
+  font-size:14px;font-weight:700;color:var(--ink);
+  margin-bottom:12px;
 }
-.price-unit{font-size:12px;color:var(--muted)}
-.price-original{font-size:12px;color:var(--muted);text-decoration:line-through}
-.unlock-btn{
-  width:100%;padding:15px;
-  background:var(--zhu);
-  color:#fff;border:none;
-  font-family:'Noto Serif SC',serif;font-size:15px;font-weight:700;
-  letter-spacing:0.2em;cursor:pointer;
-  transition:background 0.15s,transform 0.15s;
-  margin-bottom:10px;
+.pw-code-input{
+  width:100%;padding:14px 16px;
+  background:var(--silk);
+  border:1.5px solid var(--border2);
+  color:var(--ink);font-size:20px;
+  font-family:'Noto Serif SC',serif;
+  outline:none;letter-spacing:0.35em;text-align:center;
+  text-transform:uppercase;
+  transition:border-color 0.2s;
+  margin-bottom:6px;display:block;
 }
-.unlock-btn:hover{background:#a93226;transform:translateY(-1px)}
-.unlock-hint{
-  text-align:center;font-size:11px;color:var(--muted);
-  letter-spacing:0.05em;font-family:'Noto Sans SC',sans-serif;
-}
-.paywall-social{
-  display:flex;align-items:center;justify-content:center;gap:8px;
-  padding:8px 0 4px;font-size:11px;color:var(--muted);
+.pw-code-input:focus{border-color:var(--zhu);background:#fff}
+.pw-code-input::placeholder{font-size:14px;letter-spacing:0.1em;color:var(--border2)}
+.pw-code-err{
+  font-size:12px;color:var(--zhu);
+  min-height:18px;margin-bottom:8px;
   font-family:'Noto Sans SC',sans-serif;
 }
+.pw-code-btn{
+  width:100%;padding:14px;
+  background:var(--ink);color:var(--silk);border:none;
+  font-family:'Noto Serif SC',serif;font-size:15px;font-weight:700;
+  letter-spacing:0.2em;cursor:pointer;
+  transition:background 0.15s;
+}
+.pw-code-btn:hover{background:var(--zhu)}
 
 /* ─── FULL REPORT ─── */
 .full-report{display:none;padding:0 24px 32px;background:var(--silk)}
@@ -653,47 +606,6 @@ body::before{
 }
 .retry-btn-full:hover{background:var(--silk2);color:var(--ink)}
 
-/* ─── MODAL ─── */
-.modal-bg{
-  display:none;position:fixed;inset:0;
-  background:rgba(28,16,8,0.6);z-index:100;
-  align-items:center;justify-content:center;padding:24px;
-}
-.modal-bg.open{display:flex}
-.modal{
-  background:var(--silk);border:1px solid var(--border2);
-  width:100%;max-width:360px;padding:28px 24px;text-align:center;
-}
-.modal h3{
-  font-family:'Noto Serif SC',serif;
-  font-size:18px;color:var(--ink);margin-bottom:10px;font-weight:700;
-}
-.modal p{font-size:13px;color:var(--muted);line-height:1.75;margin-bottom:20px;font-family:'Noto Sans SC',sans-serif}
-.modal-input{
-  width:100%;padding:12px 14px;
-  background:#fff;border:1px solid var(--border2);
-  color:var(--ink);font-size:15px;
-  font-family:'Noto Sans SC',sans-serif;
-  outline:none;margin-bottom:12px;text-align:center;
-  letter-spacing:0.3em;transition:border-color 0.2s;
-}
-.modal-input:focus{border-color:var(--zhu)}
-.modal-input::placeholder{color:var(--border2)}
-.modal-confirm{
-  width:100%;padding:13px;
-  background:var(--zhu);color:#fff;border:none;
-  font-family:'Noto Serif SC',serif;font-size:14px;font-weight:700;
-  cursor:pointer;letter-spacing:0.15em;margin-bottom:8px;
-  transition:background 0.15s;
-}
-.modal-confirm:hover{background:#a93226}
-.modal-cancel{
-  width:100%;padding:10px;background:transparent;
-  border:none;color:var(--muted);font-size:12px;cursor:pointer;
-  font-family:'Noto Sans SC',sans-serif;letter-spacing:0.05em;
-}
-.modal-err{font-size:12px;color:var(--zhu);margin-bottom:8px;min-height:18px}
-
 /* ─── TOAST ─── */
 .toast{
   position:fixed;top:20px;left:50%;transform:translateX(-50%) translateY(-60px);
@@ -706,41 +618,6 @@ body::before{
   font-family:'Noto Sans SC',sans-serif;
 }
 .toast.show{transform:translateX(-50%) translateY(0)}
-
-/* ─── SAVE BANNER ─── */
-.save-banner{
-  background:rgba(192,57,43,0.06);
-  border-bottom:1px solid rgba(192,57,43,0.15);
-  padding:5px 16px;text-align:center;
-  font-size:11px;color:var(--zhu);opacity:0.7;
-  letter-spacing:0.05em;display:none;flex-shrink:0;
-  font-family:'Noto Sans SC',sans-serif;
-}
-.save-banner.show{display:block}
-
-/* ─── SWIPE HINT ─── */
-.swipe-hint{
-  font-size:11px;color:var(--muted);
-  text-align:center;padding:2px 0 6px;
-  letter-spacing:0.05em;flex-shrink:0;opacity:0.5;
-  font-family:'Noto Sans SC',sans-serif;
-}
-
-/* ─── SOCIAL PROOF ─── */
-.social-proof{
-  display:flex;align-items:center;gap:8px;padding:8px 0 14px;
-  font-size:11px;color:var(--muted);justify-content:center;
-  font-family:'Noto Sans SC',sans-serif;
-}
-.social-avatars{display:flex}
-.social-avatar{
-  width:20px;height:20px;
-  background:var(--silk2);border:1.5px solid var(--silk);
-  margin-left:-5px;font-size:9px;
-  display:flex;align-items:center;justify-content:center;
-  color:var(--muted);
-}
-.social-avatar:first-child{margin-left:0}
 
 /* ─── BADGE TYPES ─── */
 .badge-凤仪天下型{background:rgba(184,134,11,0.1);color:var(--gold);border-color:rgba(184,134,11,0.35)}
@@ -836,118 +713,6 @@ body::before{
 .show-card-btn:hover,.card-share-btn:hover{background:var(--silk2);color:var(--ink)}
 .card-hint{text-align:center;font-size:11px;color:rgba(245,234,208,0.5);padding:6px 16px 0}
 
-/* ─── PAYMENT SCREEN ─── */
-.pay-screen{
-  position:fixed;inset:0;z-index:150;
-  background:var(--silk);display:none;flex-direction:column;overflow-y:auto;
-}
-.pay-screen.open{display:flex}
-.pay-header{
-  padding:16px 20px 14px;
-  display:flex;align-items:center;gap:12px;
-  border-bottom:1px solid var(--border);
-  position:sticky;top:0;background:var(--silk);z-index:2;
-}
-.pay-back{
-  background:none;border:none;color:var(--muted);
-  font-size:18px;cursor:pointer;padding:0 4px;line-height:1;
-}
-.pay-header-title{
-  font-family:'Noto Serif SC',serif;font-size:16px;font-weight:700;color:var(--ink);
-}
-.pay-body{padding:24px 22px;flex:1}
-.pay-order{
-  background:#fff;border:1px solid var(--border);padding:16px;margin-bottom:20px;
-}
-.pay-order-row{
-  display:flex;justify-content:space-between;align-items:center;
-  font-size:13px;padding:6px 0;font-family:'Noto Sans SC',sans-serif;
-}
-.pay-order-label{color:var(--muted)}
-.pay-order-value{color:var(--ink);font-weight:500}
-.pay-order-total{border-top:1px solid var(--border);margin-top:6px;padding-top:10px}
-.pay-order-total .pay-order-label{color:var(--ink2)}
-.pay-order-total .pay-order-value{
-  font-size:20px;font-family:'Noto Serif SC',serif;font-weight:700;color:var(--zhu);
-}
-.pay-methods{margin-bottom:20px}
-.pay-methods-title{
-  font-size:11px;letter-spacing:0.25em;color:var(--muted);
-  text-transform:uppercase;margin-bottom:10px;font-weight:500;
-  font-family:'Noto Sans SC',sans-serif;
-}
-.pay-method-tabs{display:flex;gap:8px;margin-bottom:16px}
-.pay-method-tab{
-  flex:1;padding:10px 8px;
-  background:#fff;border:1px solid var(--border);
-  text-align:center;cursor:pointer;
-  font-size:13px;color:var(--muted);transition:all 0.15s;
-  font-family:'Noto Sans SC',sans-serif;
-}
-.pay-method-tab.active{
-  border-color:var(--zhu);background:var(--zhu-pale);color:var(--zhu);
-}
-.pay-method-tab span{display:block;font-size:17px;margin-bottom:3px}
-.qr-wrap{
-  background:#fff;border:1px solid var(--border);
-  padding:20px;text-align:center;margin-bottom:16px;
-}
-.qr-placeholder{
-  width:180px;height:180px;margin:0 auto 14px;
-  background:#fff;display:flex;align-items:center;justify-content:center;
-  position:relative;overflow:hidden;border:1px solid var(--border);
-}
-.qr-inner-canvas{width:100%;height:100%}
-.qr-amount-badge{
-  display:inline-block;padding:4px 14px;
-  background:var(--zhu-pale);border:1px solid rgba(192,57,43,0.25);
-  color:var(--zhu);font-size:13px;font-weight:700;
-  margin-bottom:14px;font-family:'Noto Serif SC',serif;
-}
-.qr-instruction{
-  font-size:12px;color:var(--muted);line-height:1.85;
-  font-family:'Noto Sans SC',sans-serif;
-}
-.pay-steps{display:flex;justify-content:space-between;margin-bottom:24px;padding:16px;background:#fff;border:1px solid var(--border)}
-.pay-step{text-align:center;flex:1}
-.pay-step-num{
-  width:24px;height:24px;border:1px solid var(--border);
-  border-radius:0;margin:0 auto 6px;
-  display:flex;align-items:center;justify-content:center;
-  font-size:11px;color:var(--muted);
-}
-.pay-step.done .pay-step-num{background:var(--zhu-pale);border-color:rgba(192,57,43,0.4);color:var(--zhu)}
-.pay-step-label{font-size:10px;color:var(--muted);letter-spacing:0.05em;font-family:'Noto Sans SC',sans-serif}
-.pay-code-section{margin-bottom:12px}
-.pay-code-label{
-  font-size:12px;color:var(--muted);margin-bottom:8px;
-  display:flex;align-items:center;gap:6px;font-family:'Noto Sans SC',sans-serif;
-}
-.pay-code-input-row{display:flex;gap:8px}
-.pay-code-input{
-  flex:1;padding:13px 14px;background:#fff;
-  border:1px solid var(--border2);color:var(--ink);font-size:15px;
-  font-family:'Noto Sans SC',sans-serif;
-  outline:none;letter-spacing:0.25em;text-align:center;text-transform:uppercase;
-  transition:border-color 0.2s;
-}
-.pay-code-input:focus{border-color:var(--zhu)}
-.pay-code-btn{
-  padding:13px 18px;background:var(--zhu);color:#fff;border:none;
-  font-family:'Noto Serif SC',serif;font-size:14px;font-weight:700;
-  cursor:pointer;transition:background 0.15s;white-space:nowrap;
-}
-.pay-code-btn:hover{background:#a93226}
-.pay-code-err{font-size:12px;color:var(--zhu);min-height:18px;margin-top:6px;padding-left:2px}
-.pay-help{font-size:12px;color:var(--muted);line-height:1.8;text-align:center;padding:4px 0 16px;font-family:'Noto Sans SC',sans-serif}
-.qr-custom-note{
-  background:var(--gold-pale);border:1px dashed var(--border);
-  padding:10px 14px;font-size:11px;color:var(--muted);
-  line-height:1.7;margin-bottom:14px;text-align:center;
-  font-family:'Noto Sans SC',sans-serif;
-}
-.qr-custom-note strong{color:var(--gold)}
-
 /* ─── ADMIN ─── */
 .admin-panel{
   position:fixed;inset:0;z-index:200;background:var(--silk);
@@ -990,15 +755,7 @@ body::before{
   max-height:160px;overflow-y:auto;
   font-family:monospace;line-height:1.7;
 }
-.admin-entry{
-  position:fixed;bottom:20px;right:20px;z-index:50;
-  width:36px;height:36px;
-  background:rgba(44,24,16,0.6);border:1px solid var(--border2);
-  color:var(--muted);font-size:16px;cursor:pointer;
-  display:flex;align-items:center;justify-content:center;
-  transition:all 0.15s;
-}
-.admin-entry:hover{background:var(--ink);color:var(--silk)}
+
 
 /* ─── MOBILE ADJUSTMENTS ─── */
 @media(max-width:380px){
@@ -1207,6 +964,29 @@ body::before{
   color:rgba(245,240,232,0.5);
 }
 .card-act-secondary:hover{background:rgba(245,240,232,0.08)}
+.pw-get-code{
+  margin-top:16px;padding-top:16px;
+  border-top:1px solid var(--border);
+}
+.pw-get-code-title{
+  font-size:13px;font-weight:600;color:var(--ink);
+  margin-bottom:3px;font-family:'Noto Serif SC',serif;
+}
+.pw-get-code-sub{
+  font-size:11px;color:var(--muted);margin-bottom:10px;
+  font-family:'Noto Sans SC',sans-serif;
+}
+.pw-xhs-btn{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  width:100%;padding:13px;
+  background:var(--zhu);color:#fff;
+  border:none;text-decoration:none;
+  font-family:'Noto Sans SC',sans-serif;font-size:14px;font-weight:500;
+  letter-spacing:0.08em;cursor:pointer;
+  transition:background 0.15s;
+}
+.pw-xhs-btn:hover{background:#a93226}
+.pw-xhs-icon{font-size:15px}
 
 </style>
 </head>
@@ -1235,7 +1015,7 @@ body::before{
     </div>
     <button class="start-btn" id="btn-start">开始测试</button>
   </div>
-  <div class="cover-footer">本测试基于人格心理学与前世命理分析 · 仅供娱乐参考</div>
+  <div class="cover-footer" id="cover-footer">本测试基于人格心理学与前世命理分析 · 仅供娱乐参考</div>
 </div>
 
 <!-- ══ QUIZ ══ -->
@@ -1298,54 +1078,26 @@ body::before{
 
   <!-- PAYWALL -->
   <div class="paywall" id="paywall">
-    <div class="countdown-bar" id="countdown-bar">
-      <span class="cd-icon">⏳</span>
-      <span class="cd-text">限时优惠价，剩余时间</span>
-      <span class="cd-time" id="cd-time">29:59</span>
-    </div>
-    <div class="share-unlock" id="share-unlock">
-      <div class="share-unlock-title">🎁 分享解锁免费报告</div>
-      <div class="share-unlock-sub">把测试链接分享给3位朋友<br>即可免费解锁完整宫廷档案</div>
-      <div class="share-steps">
-        <div class="share-step"><strong>1</strong>复制链接</div>
-        <div class="share-step"><strong>2</strong>发给好友</div>
-        <div class="share-step"><strong>3</strong>自动解锁</div>
-      </div>
-      <div class="share-progress-row">
-        <span class="share-prog-label">已分享</span>
-        <span class="share-prog-count"><span id="share-count">0</span> / 3 人</span>
-      </div>
-      <div class="share-prog-track"><div class="share-prog-fill" id="share-prog" style="width:0%"></div></div>
-      <button class="share-btn" id="btn-share">复制链接并分享 →</button>
-    </div>
-    <div class="paywall-top">
-      <div class="paywall-lock">🔒</div>
-      <div class="paywall-title">解锁完整宫廷命格档案</div>
-      <div class="paywall-sub">前世身份只是开始<br>你真正的宫廷命格藏在这里</div>
-    </div>
+    <div class="pw-preview-title">完整命格档案包含</div>
     <div class="paywall-features">
-      <div class="feature-item"><span class="feature-dot"></span>深度宫廷身份解析（600字）</div>
-      <div class="feature-item"><span class="feature-dot"></span>5大宫廷特质维度分析</div>
+      <div class="feature-item"><span class="feature-dot"></span>前世宫廷深度解析（600字）</div>
+      <div class="feature-item"><span class="feature-dot"></span>5大命格特质维度分析</div>
       <div class="feature-item"><span class="feature-dot"></span>今生性格映射与处世建议</div>
-      <div class="feature-item"><span class="feature-dot"></span>你与其他宫廷职位的命格契合度</div>
-      <div class="feature-item"><span class="feature-dot"></span>前世宫廷故事情境还原</div>
+      <div class="feature-item"><span class="feature-dot"></span>与其他宫廷职位的契合度</div>
+      <div class="feature-item"><span class="feature-dot"></span>历史同类命格人物</div>
     </div>
-    <div class="paywall-cta">
-      <div class="price-row">
-        <span class="price-main">¥9.9</span>
-        <span class="price-unit">/ 次</span>
-        <span class="price-original">¥29.9</span>
+    <div class="pw-code-area">
+      <div class="pw-code-label">输入购买后收到的校验码</div>
+      <input class="pw-code-input" id="pw-code-input" placeholder="PAL-XXXX-XXXX" maxlength="14" autocapitalize="characters" spellcheck="false">
+      <div class="pw-code-err" id="pw-code-err"></div>
+      <button class="pw-code-btn" id="btn-unlock">解锁完整报告 →</button>
+      <div class="pw-get-code">
+        <div class="pw-get-code-title">🔑 还没有校验码？</div>
+        <div class="pw-get-code-sub">购买后系统自动发送校验码</div>
+        <a class="pw-xhs-btn" id="btn-xhs-store" href="https://www.xiaohongshu.com" target="_blank">
+          <span class="pw-xhs-icon">🛍</span> 小红书店铺购买
+        </a>
       </div>
-      <div class="paywall-social">
-        <div class="social-avatars">
-          <div class="social-avatar">宫</div>
-          <div class="social-avatar">廷</div>
-          <div class="social-avatar">魂</div>
-        </div>
-        <span>已有 <strong style="color:rgba(184,147,63,0.7)">3,261</strong> 人解锁了完整报告</span>
-      </div>
-      <button class="unlock-btn" id="btn-unlock">立即解锁 · 永久保存</button>
-      <div class="unlock-hint">支付后获得专属解锁码 · 截图永久有效</div>
     </div>
   </div>
 
@@ -1444,118 +1196,13 @@ body::before{
 </div>
 
 <!-- ══ PAYMENT SCREEN ══ -->
-<div class="pay-screen" id="pay-screen">
-  <div class="pay-header">
-    <button class="pay-back" id="btn-pay-back">←</button>
-    <span class="pay-header-title">完成支付 · 获取解锁码</span>
-  </div>
-  <div class="pay-body">
-
-    <!-- step indicator -->
-    <div class="pay-steps" style="margin-bottom:24px">
-      <div class="pay-step done">
-        <div class="pay-step-num">1</div>
-        <div class="pay-step-label">查看结果</div>
-      </div>
-      <div class="pay-step done">
-        <div class="pay-step-num">2</div>
-        <div class="pay-step-label">选择解锁</div>
-      </div>
-      <div class="pay-step">
-        <div class="pay-step-num">3</div>
-        <div class="pay-step-label">扫码付款</div>
-      </div>
-      <div class="pay-step">
-        <div class="pay-step-num">4</div>
-        <div class="pay-step-label">输入码解锁</div>
-      </div>
-    </div>
-
-    <!-- order summary -->
-    <div class="pay-order">
-      <div class="pay-order-row">
-        <span class="pay-order-label">商品</span>
-        <span class="pay-order-value">完整宫廷命格档案（永久）</span>
-      </div>
-      <div class="pay-order-row">
-        <span class="pay-order-label">原价</span>
-        <span class="pay-order-value" style="text-decoration:line-through;color:rgba(245,234,208,0.3)">¥29.9</span>
-      </div>
-      <div class="pay-order-row pay-order-total">
-        <span class="pay-order-label">限时优惠价</span>
-        <span class="pay-order-value">¥9.9</span>
-      </div>
-    </div>
-
-    <!-- payment method tabs -->
-    <div class="pay-methods">
-      <div class="pay-methods-title">选择付款方式</div>
-      <div class="pay-method-tabs">
-        <div class="pay-method-tab active" id="tab-wechat" data-method="wechat">
-          <span>💚</span>微信支付
-        </div>
-        <div class="pay-method-tab" id="tab-alipay" data-method="alipay">
-          <span>💙</span>支付宝
-        </div>
-      </div>
-
-      <!-- QR area -->
-      <div class="qr-custom-note">
-        ⬇ 请将下方二维码替换为你的<strong>真实收款码</strong><br>
-        替换方法见配套运营文档
-      </div>
-      <div class="qr-wrap">
-        <div class="qr-amount-badge">¥9.9</div>
-        <div class="qr-placeholder" id="qr-placeholder">
-          <!-- 真实二维码图片放这里 -->
-          <!-- <img src="your-qrcode.jpg" style="width:100%;height:100%;object-fit:cover"> -->
-          <canvas id="qr-canvas" class="qr-inner-canvas"></canvas>
-        </div>
-        <div class="qr-instruction">
-          <strong id="qr-method-name">微信</strong>扫描上方二维码付款<br>
-          付款备注：<strong>宫廷测验</strong><br>
-          收到付款后博主将在 <strong>5分钟内</strong> 私信你解锁码
-        </div>
-      </div>
-    </div>
-
-    <!-- code entry -->
-    <div class="pay-code-section">
-      <div class="pay-code-label">收到解锁码后输入这里</div>
-      <div class="pay-code-input-row">
-        <input class="pay-code-input" id="pay-code-input" placeholder="6位解锁码" maxlength="6">
-        <button class="pay-code-btn" id="btn-pay-confirm">解锁</button>
-      </div>
-      <div class="pay-code-err" id="pay-code-err"></div>
-    </div>
-
-    <div class="pay-help">
-      未收到解锁码？<br>
-      请截图付款记录私信博主，或重新测试后点击解锁<br>
-      <span style="color:rgba(184,147,63,0.4)">解锁码永久有效，截图保存可多次使用</span>
-    </div>
-
-  </div>
-</div>
 
 </div><!-- #app -->
 
 
-<button class="admin-entry" id="btn-admin-entry" title="管理后台">⚙</button>
 
 <div class="toast" id="toast"></div>
 
-<!-- MODAL -->
-<div class="modal-bg" id="modal">
-  <div class="modal">
-    <h3>输入解锁码</h3>
-    <p>购买后将收到6位解锁码<br>输入即可查看完整报告</p>
-    <div class="modal-err" id="modal-err"></div>
-    <input class="modal-input" id="code-input" placeholder="请输入解锁码" maxlength="6">
-    <button class="modal-confirm" id="btn-confirm">确认解锁</button>
-    <button class="modal-cancel" id="btn-cancel">暂不解锁</button>
-  </div>
-</div>
 
 <script>
 const QS=[
@@ -1921,38 +1568,14 @@ function buildResult(){
   },300);
 }
 
-function openModal(){document.getElementById('modal').classList.add('open');}
-function closeModal(){document.getElementById('modal').classList.remove('open');}
 
-function verifyCode(){
-  const v=document.getElementById('code-input').value.trim();
-  const err=document.getElementById('modal-err');
-  if(v.length!==6){err.textContent='请输入6位解锁码';return;}
-  if(adminCodes.indexOf(v.toUpperCase())!==-1){
-    closeModal();
-    trackUnlock();
-    document.getElementById('paywall').style.display='none';
-    var fr=document.getElementById('full-report');
-    fr.style.display='block';
-    fr.classList.add('unlocking');
-    var ov=document.querySelector('.res-blur-overlay');
-    if(ov)ov.style.display='none';
-    showToast('解锁成功！完整宫廷命格档案已开启 ✦',2500);
-    setTimeout(function(){
-      document.querySelectorAll('.dim-fill').forEach(function(el){el.style.width=el.dataset.pct+'%';});
-      document.querySelectorAll('.compat-fill').forEach(function(el){el.style.width=el.dataset.pct+'%';el.style.background=el.dataset.color||'#b8933f';});
-    },300);
-  } else {
-    err.textContent='解锁码无效，请检查后重试';
-  }
-}
 
 function restart(){
   cur=0;ans=new Array(QS.length).fill(null);clearProgress();
   document.getElementById('paywall').style.display='';
   document.getElementById('full-report').style.display='none';
-  document.getElementById('code-input').value='';
-  document.getElementById('modal-err').textContent='';
+  document.getElementById('pw-code-input').value='';
+  document.getElementById('pw-code-err').textContent='';
   show('cover');
 }
 
@@ -1960,17 +1583,53 @@ document.addEventListener('DOMContentLoaded',function(){
   document.getElementById('btn-start').addEventListener('click',startQuiz);
   document.getElementById('btn-back').addEventListener('click',prevQ);
   document.getElementById('btn-next').addEventListener('click',nextQ);
-  document.getElementById('btn-unlock').addEventListener('click',openPayScreen);
-  document.getElementById('btn-confirm').addEventListener('click',verifyCode);
-  document.getElementById('btn-cancel').addEventListener('click',closeModal);
+  document.getElementById('btn-unlock').addEventListener('click', async function(){
+    var raw = document.getElementById('pw-code-input').value;
+    var v = normalizeCode(raw);
+    var err = document.getElementById('pw-code-err');
+    if(v.length < 6){ err.textContent = '请输入完整的校验码'; return; }
+
+    // 先检查是否是管理员预置码（本地验证）
+    var isAdminCode = adminCodes.indexOf(v) !== -1;
+    if(!isAdminCode){
+      err.textContent = '校验码无效，请检查后重试';
+      document.getElementById('pw-code-input').style.borderColor = 'rgba(192,57,43,0.5)';
+      setTimeout(function(){ document.getElementById('pw-code-input').style.borderColor = ''; }, 2000);
+      return;
+    }
+
+    // 有效码 → 服务器验证一机一码
+    var btn = document.getElementById('btn-unlock');
+    btn.textContent = '验证中…';
+    btn.disabled = true;
+    err.textContent = '';
+
+    try{
+      var result = await verifyCodeOnServer(v);
+      if(result.status === 'ok'){
+        doUnlock();
+      } else {
+        err.textContent = result.msg || '验证失败，请稍后重试';
+        document.getElementById('pw-code-input').style.borderColor = 'rgba(192,57,43,0.5)';
+        setTimeout(function(){ document.getElementById('pw-code-input').style.borderColor = ''; }, 2000);
+      }
+    }catch(e){
+      err.textContent = '网络错误，请检查网络后重试';
+    }finally{
+      btn.textContent = '解锁完整报告 →';
+      btn.disabled = false;
+    }
+  });
+  document.getElementById('pw-code-input').addEventListener('keydown', function(e){ if(e.key==='Enter') document.getElementById('btn-unlock').click(); });
+  document.getElementById('pw-code-input').addEventListener('input', function(){
+    var v = this.value.toUpperCase().replace(/[^A-Z0-9]/g,'');
+    if(v.length > 3) v = v.slice(0,3)+'-'+v.slice(3);
+    if(v.length > 8) v = v.slice(0,8)+'-'+v.slice(8,12);
+    this.value = v;
+    document.getElementById('pw-code-err').textContent = '';
+  });
   document.getElementById('btn-retry').addEventListener('click',restart);
   document.getElementById('btn-share').addEventListener('click',handleShare);
-  document.getElementById('btn-pay-back').addEventListener('click',closePayScreen);
-  document.getElementById('btn-pay-confirm').addEventListener('click',confirmPayCode);
-  document.getElementById('pay-code-input').addEventListener('keydown',function(e){if(e.key==='Enter')confirmPayCode();});
-  document.querySelectorAll('.pay-method-tab').forEach(function(t){
-    t.addEventListener('click',function(){switchPayMethod(this.dataset.method);});
-  });
   document.getElementById('btn-show-card').addEventListener('click',function(){if(window._currentCh)openShareCard(window._currentCh);});
   document.getElementById('btn-card-close').addEventListener('click',function(){document.getElementById('card-screen').classList.remove('open');});
   document.getElementById('btn-card-close2').addEventListener('click',function(){document.getElementById('card-screen').classList.remove('open');});
@@ -1978,10 +1637,32 @@ document.addEventListener('DOMContentLoaded',function(){
     var url=window.location.href;
     navigator.clipboard.writeText(url).then(function(){alert('链接已复制！请截图此卡片后发到小红书，并在文案中附上链接 ✦');}).catch(function(){alert('请截图此卡片发到小红书 #测测你的前世宫廷职位');});
   });
-  document.getElementById('btn-admin-entry').addEventListener('click',openAdmin);
+  // Hidden admin entry: tap footer 5 times within 3 seconds
+  var adminTapCount = 0, adminTapTimer = null;
+  var footerEl = document.getElementById('cover-footer');
+  if(footerEl){
+    footerEl.addEventListener('click', function(){
+      adminTapCount++;
+      clearTimeout(adminTapTimer);
+      if(adminTapCount >= 5){
+        adminTapCount = 0;
+        openAdmin();
+      } else {
+        adminTapTimer = setTimeout(function(){ adminTapCount = 0; }, 3000);
+      }
+    });
+    // 移动端长按1.5秒也可触发
+    var longPressTimer = null;
+    footerEl.addEventListener('touchstart', function(){ longPressTimer = setTimeout(function(){ openAdmin(); }, 1500); }, {passive:true});
+    footerEl.addEventListener('touchend', function(){ clearTimeout(longPressTimer); });
+    footerEl.addEventListener('touchmove', function(){ clearTimeout(longPressTimer); });
+  }
+  // URL参数备用入口：在网址末尾加 ?admin=1 直接打开后台
+  if(new URLSearchParams(window.location.search).get('admin')==='1') openAdmin();
   document.getElementById('btn-admin-close').addEventListener('click',closeAdmin);
   document.getElementById('btn-gen-codes').addEventListener('click',generateCodes);
   document.getElementById('btn-copy-codes').addEventListener('click',copyAllCodes);
+  document.getElementById('btn-copy-template').addEventListener('click',copyDeliveryTemplate);
   document.getElementById('btn-clear-stats').addEventListener('click',function(){
     if(!confirm('确认清除全部统计数据？（测试次数、职位分布、解锁/分享记录）\n解锁码不会被清除。')) return;
     try{
@@ -1992,7 +1673,8 @@ document.addEventListener('DOMContentLoaded',function(){
       localStorage.removeItem('lq_share');
       localStorage.removeItem('lq_ans');
       localStorage.removeItem('lq_cur');
-      localStorage.removeItem('lq_cd_end');
+      localStorage.removeItem('lq_code_bindings');
+      localStorage.removeItem('lq_device_id');
     }catch(e){}
     refreshAdminStats();
     showToast('统计数据已清除 ✓', 2000);
@@ -2000,8 +1682,6 @@ document.addEventListener('DOMContentLoaded',function(){
   initParticles();
   initSwipe();
   // animate social proof counter
-  var counterEl=document.querySelector('.paywall-social strong');
-  if(counterEl)animateCounter(counterEl,3261,1800);
 });
 
 // ── Compat chart ──────────────────────────────────────
@@ -2128,16 +1808,30 @@ function refreshAdminStats(){
   }catch(e){}
 }
 
-function generateCodes(){
+async function generateCodes(){
   var n=parseInt(document.getElementById('adm-code-n').value)||5;
   n=Math.min(50,Math.max(1,n));
   var chars='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+  function seg(len){var s='';for(var i=0;i<len;i++)s+=chars[Math.floor(Math.random()*chars.length)];return s;}
+  var newCodes=[];
   for(var i=0;i<n;i++){
-    var code='';
-    for(var j=0;j<6;j++)code+=chars[Math.floor(Math.random()*chars.length)];
-    if(adminCodes.indexOf(code)===-1)adminCodes.push(code);
+    var code='PAL-'+seg(4)+'-'+seg(4);
+    if(adminCodes.indexOf(code)===-1){adminCodes.push(code);newCodes.push(code);}
   }
   saveAdminCodes();
+
+  // 同步写入 Supabase（device_id 留空，等用户首次使用时绑定）
+  if(newCodes.length>0){
+    var rows=newCodes.map(function(c){return {code:c,device_id:null,unlocked_count:1};});
+    fetch(SUPA_URL+'/rest/v1/code_bindings',{
+      method:'POST',
+      headers:{'apikey':SUPA_KEY,'Authorization':'Bearer '+SUPA_KEY,'Content-Type':'application/json','Prefer':'return=minimal'},
+      body:JSON.stringify(rows)
+    }).then(function(r){
+      if(r.ok) showToast('已生成 '+newCodes.length+' 个码并同步到服务器 ✓',2000);
+      else showToast('生成成功但服务器同步失败，请检查网络',2500);
+    }).catch(function(){showToast('生成成功但服务器同步失败',2000);});
+  }
   refreshAdminStats();
 }
 
@@ -2147,6 +1841,16 @@ function copyAllCodes(){
     var btn=document.getElementById('btn-copy-codes');
     var orig=btn.textContent;btn.textContent='已复制 ✓';
     setTimeout(function(){btn.textContent=orig;},1500);
+  }).catch(function(){alert(text);});
+}
+
+function copyDeliveryTemplate(){
+  var codes=adminCodes.slice(0,1);
+  var code=codes.length?codes[0]:'PAL-XXXX-XXXX';
+  var url=window.location.href.split('?')[0];
+  var text='测试网页链接⬇️⬇️⬇️\n'+url+'\n\n校验码⬆️⬆️⬆️\n'+code+'\n\n❗❗【必看】❗❗【使用说明】\n复制上方测试链接到【浏览器】打开，【不要】在小红书内部直接点开链接。输入【校验码】后即可解锁完整宫廷命格报告。校验码永久有效，截图保存可重复使用。';
+  navigator.clipboard.writeText(text).then(function(){
+    showToast('发货模板已复制 ✓ 粘贴到小红书自动发货设置里',3000);
   }).catch(function(){alert(text);});
 }
 
@@ -2317,47 +2021,77 @@ function drawQRPlaceholder(canvasId, color){
 // ── Payment screen ────────────────────────────────────
 var currentMethod='wechat';
 
-function openPayScreen(){
-  document.getElementById('pay-screen').classList.add('open');
-  window.scrollTo(0,0);
-  drawQRPlaceholder('qr-canvas','#1a1208');
+
+
+// ── Supabase 服务器端一机一码验证 ──────────────────────
+var SUPA_URL='https://tbucalcxdyzxzkthqxsr.supabase.co';
+var SUPA_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRidWNhbGN4ZHl6eHprdGhxeHNyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzcwNzE4NzEsImV4cCI6MjA5MjY0Nzg3MX0.BGfhJ1ePmAL1XZF19o8f2DFAZtHdy7SeEktnkvuiZ5w';
+
+// 设备指纹（同之前逻辑）
+function getCanvasFingerprint(){
+  try{var c=document.createElement('canvas');var ctx=c.getContext('2d');ctx.textBaseline='top';ctx.font='14px Arial';ctx.fillStyle='#f60';ctx.fillRect(125,1,62,20);ctx.fillStyle='#069';ctx.fillText('宫廷命格',2,15);ctx.fillStyle='rgba(102,204,0,0.7)';ctx.fillText('宫廷命格',4,17);return c.toDataURL().slice(-50);}catch(e){return 'nc';}
 }
-function closePayScreen(){
-  document.getElementById('pay-screen').classList.remove('open');
+function getDeviceId(){
+  try{var s=localStorage.getItem('lq_device_id');if(s)return s;}catch(e){}
+  var parts=[navigator.language||'',screen.width+'x'+screen.height,screen.colorDepth||'',new Date().getTimezoneOffset(),navigator.hardwareConcurrency||'',navigator.platform||'',getCanvasFingerprint()];
+  var str=parts.join('|');var hash=0;
+  for(var i=0;i<str.length;i++){hash=((hash<<5)-hash)+str.charCodeAt(i);hash=hash&hash;}
+  var id=Math.abs(hash).toString(36);
+  try{localStorage.setItem('lq_device_id',id);}catch(e){}
+  return id;
 }
 
-function switchPayMethod(method){
-  currentMethod=method;
-  document.querySelectorAll('.pay-method-tab').forEach(function(t){
-    t.classList.toggle('active',t.dataset.method===method);
+// 核心验证函数：请求 Supabase
+async function verifyCodeOnServer(code){
+  var deviceId=getDeviceId();
+  // 1. 查询这个码的记录
+  var res=await fetch(SUPA_URL+'/rest/v1/code_bindings?code=eq.'+encodeURIComponent(code)+'&select=code,device_id,unlocked_count',{
+    headers:{'apikey':SUPA_KEY,'Authorization':'Bearer '+SUPA_KEY,'Content-Type':'application/json'}
   });
-  document.getElementById('qr-method-name').textContent=method==='wechat'?'微信':'支付宝';
-  drawQRPlaceholder('qr-canvas',method==='wechat'?'#07c160':'#1677ff');
+  if(!res.ok) return {status:'error',msg:'网络错误，请稍后重试'};
+  var rows=await res.json();
+
+  if(rows.length===0){
+    // 码不在数据库 → 无效码
+    return {status:'invalid',msg:'校验码无效，请检查后重试'};
+  }
+
+  var row=rows[0];
+  if(row.device_id===deviceId){
+    // 同一台设备 → 直接放行
+    return {status:'ok'};
+  }
+  if(row.device_id && row.device_id!==deviceId){
+    // 已被其他设备绑定
+    return {status:'bound',msg:'此校验码已在其他设备激活，无法重复使用'};
+  }
+
+  // device_id 为空 → 首次使用，绑定设备
+  var upd=await fetch(SUPA_URL+'/rest/v1/code_bindings?code=eq.'+encodeURIComponent(code),{
+    method:'PATCH',
+    headers:{'apikey':SUPA_KEY,'Authorization':'Bearer '+SUPA_KEY,'Content-Type':'application/json','Prefer':'return=minimal'},
+    body:JSON.stringify({device_id:deviceId,used_at:new Date().toISOString()})
+  });
+  if(!upd.ok) return {status:'error',msg:'绑定失败，请稍后重试'};
+  return {status:'ok'};
 }
 
-function confirmPayCode(){
-  var v=document.getElementById('pay-code-input').value.trim().toUpperCase();
-  var err=document.getElementById('pay-code-err');
-  if(v.length!==6){err.textContent='请输入6位解锁码';return;}
-  if(adminCodes.indexOf(v)!==-1){
-    closePayScreen();
-    closeModal();
-    trackUnlock();
-    document.getElementById('paywall').style.display='none';
-    var fr=document.getElementById('full-report');
-    fr.style.display='block';
-    var ov=document.querySelector('.res-blur-overlay');
-    if(ov)ov.style.display='none';
-    showToast('解锁成功！完整宫廷命格档案已开启 ✦',2500);
-    setTimeout(function(){
-      document.querySelectorAll('.dim-fill').forEach(function(el){el.style.width=el.dataset.pct+'%';});
-      document.querySelectorAll('.compat-fill').forEach(function(el){el.style.width=el.dataset.pct+'%';el.style.background=el.dataset.color||'#b8933f';});
-    },300);
-  } else {
-    err.textContent='解锁码无效，请检查后重试';
-    document.getElementById('pay-code-input').style.borderColor='rgba(224,112,112,0.5)';
-    setTimeout(function(){document.getElementById('pay-code-input').style.borderColor='';},2000);
-  }
+function doUnlock(){
+  trackUnlock();
+  document.getElementById('paywall').style.display='none';
+  var fr=document.getElementById('full-report');
+  fr.style.display='block';
+  var ov=document.querySelector('.res-blur-overlay');
+  if(ov)ov.style.display='none';
+  showToast('解锁成功！完整宫廷命格档案已开启 ✦',2500);
+  setTimeout(function(){
+    document.querySelectorAll('.dim-fill').forEach(function(el){el.style.width=el.dataset.pct+'%';});
+    document.querySelectorAll('.compat-fill').forEach(function(el){el.style.width=el.dataset.pct+'%';el.style.background=el.dataset.color||'#c0392b';});
+  },300);
+}
+
+function normalizeCode(v){
+  return v.trim().toUpperCase().replace(/\s/g,'');
 }
 
 </script>
@@ -2384,6 +2118,7 @@ function confirmPayCode(){
       <button class="code-gen-btn" id="btn-copy-codes">复制全部</button>
     </div>
     <div class="codes-list" id="adm-codes-list">点击"批量生成"创建解锁码</div>
+    <button class="code-gen-btn" id="btn-copy-template" style="width:100%;margin-top:8px;background:var(--zhu)">📋 复制小红书发货模板</button>
   </div>
   <div class="code-gen-section" style="padding-top:0">
     <div class="admin-section-title" style="margin-bottom:10px">数据管理</div>
