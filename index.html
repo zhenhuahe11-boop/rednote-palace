@@ -1414,6 +1414,7 @@ function startCountdown(){
 function tickCountdown(){
   const bar=document.getElementById('countdown-bar');
   const el=document.getElementById('cd-time');
+  if(!bar&&!el) return;
   if(!el||!bar)return;
   const left=cdEnd-Date.now();
   if(left<=0){bar.style.display='none';return;}
@@ -1629,7 +1630,7 @@ document.addEventListener('DOMContentLoaded',function(){
     document.getElementById('pw-code-err').textContent = '';
   });
   document.getElementById('btn-retry').addEventListener('click',restart);
-  document.getElementById('btn-share').addEventListener('click',handleShare);
+  var btnShare=document.getElementById('btn-share'); if(btnShare) btnShare.addEventListener('click',handleShare);
   document.getElementById('btn-show-card').addEventListener('click',function(){if(window._currentCh)openShareCard(window._currentCh);});
   document.getElementById('btn-card-close').addEventListener('click',function(){document.getElementById('card-screen').classList.remove('open');});
   document.getElementById('btn-card-close2').addEventListener('click',function(){document.getElementById('card-screen').classList.remove('open');});
