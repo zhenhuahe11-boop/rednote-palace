@@ -1656,6 +1656,13 @@ document.addEventListener('DOMContentLoaded',function(){
   document.getElementById('btn-gen-codes').addEventListener('click',generateCodes);
   document.getElementById('btn-copy-codes').addEventListener('click',copyAllCodes);
   document.getElementById('btn-copy-template').addEventListener('click',copyDeliveryTemplate);
+  document.getElementById('btn-clear-codes').addEventListener('click',function(){
+    if(!confirm('确认清空全部校验码？此操作不可撤销。\n注意：Supabase数据库里的记录需要手动删除。')) return;
+    adminCodes=[];
+    saveAdminCodes();
+    refreshAdminStats();
+    showToast('校验码已清空 ✓', 2000);
+  });
   document.getElementById('btn-clear-stats').addEventListener('click',function(){
     if(!confirm('确认清除全部统计数据？（测试次数、职位分布、解锁/分享记录）\n解锁码不会被清除。')) return;
     try{
@@ -2116,6 +2123,7 @@ function normalizeCode(v){
   <div class="code-gen-section" style="padding-top:0">
     <div class="admin-section-title" style="margin-bottom:10px">数据管理</div>
     <button class="code-gen-btn" id="btn-clear-stats" style="width:100%;background:#8b2020;margin-bottom:6px">清除全部统计数据（旧版残留时使用）</button>
+    <button class="code-gen-btn" id="btn-clear-codes" style="width:100%;background:#8b2020;margin-bottom:6px">清空全部校验码</button>
     <div style="font-size:11px;color:var(--muted);font-family:'Noto Sans SC',sans-serif">清除后计数归零，不影响解锁码</div>
   </div>
 </div>
