@@ -1653,6 +1653,7 @@ document.addEventListener('DOMContentLoaded',function(){
   // URL参数备用入口：在网址末尾加 ?admin=1 直接打开后台
   if(new URLSearchParams(window.location.search).get('admin')==='1') openAdmin();
   document.getElementById('btn-admin-close').addEventListener('click',closeAdmin);
+  document.getElementById('btn-next-code').addEventListener('click',getNextCode);
   document.getElementById('btn-gen-codes').addEventListener('click',generateCodes);
   document.getElementById('btn-copy-codes').addEventListener('click',copyAllCodes);
   document.getElementById('btn-copy-template').addEventListener('click',copyDeliveryTemplate);
@@ -1790,7 +1791,15 @@ function refreshAdminStats(){
     document.getElementById('adm-unlocked').textContent=unlocked;
     document.getElementById('adm-codes').textContent=adminCodes.length;
     document.getElementById('adm-shares').textContent=shares;
-    
+
+    // 从 Supabase 实时获取待发码数量
+    fetch(SUPA_URL+'/rest/v1/code_bindings?device_id=is.null&select=code',{
+      headers:{'apikey':SUPA_KEY,'Authorization':'Bearer '+SUPA_KEY}
+    }).then(function(r){return r.json();}).then(function(rows){
+      var unusedEl=document.getElementById('adm-unused');
+      if(unusedEl) unusedEl.textContent=rows.length;
+    }).catch(function(){});
+
     var dist=JSON.parse(localStorage.getItem('lq_char_dist')||'{}');
     var keys=Object.keys(CHARS);
     var max=Math.max.apply(null,keys.map(function(k){return dist[k]||0;}).concat([1]));
@@ -1803,9 +1812,41 @@ function refreshAdminStats(){
         +'<span class="admin-bar-count">'+n+'</span>'
         +'</div>';
     }).join('');
-    
+
     document.getElementById('adm-codes-list').textContent=adminCodes.join('\n')||'暂无解锁码';
   }catch(e){}
+}
+
+async function getNextCode(){
+  var btn=document.getElementById('btn-next-code');
+  var orig=btn.textContent;
+  btn.textContent='查询中…';btn.disabled=true;
+  try{
+    // 从 Supabase 查一个 device_id 为 NULL 的未使用码
+    var res=await fetch(SUPA_URL+'/rest/v1/code_bindings?device_id=is.null&select=code&limit=1',{
+      headers:{'apikey':SUPA_KEY,'Authorization':'Bearer '+SUPA_KEY}
+    });
+    if(!res.ok){showToast('查询失败，请检查网络',2000);return;}
+    var rows=await res.json();
+    if(rows.length===0){
+      showToast('⚠️ 没有可用的校验码了，请先生成一批！',3000);
+      return;
+    }
+    var code=rows[0].code;
+    // 复制到剪贴板
+    navigator.clipboard.writeText(code).then(function(){
+      showToast('已复制：'+code+'  直接粘贴发给买家 ✓',3500);
+      // 同步更新本地显示
+      refreshAdminStats();
+    }).catch(function(){
+      // 剪贴板失败就弹出
+      alert('待发校验码：\n\n'+code+'\n\n请手动复制');
+    });
+  }catch(e){
+    showToast('网络错误，请重试',2000);
+  }finally{
+    btn.textContent=orig;btn.disabled=false;
+  }
 }
 
 async function generateCodes(){
@@ -2106,6 +2147,7 @@ function normalizeCode(v){
     <div class="stat-card"><div class="stat-lbl">总测试次数</div><div class="stat-val" id="adm-total">0</div></div>
     <div class="stat-card"><div class="stat-lbl">已解锁次数</div><div class="stat-val" id="adm-unlocked">0</div></div>
     <div class="stat-card"><div class="stat-lbl">有效解锁码</div><div class="stat-val" id="adm-codes">0</div></div>
+    <div class="stat-card"><div class="stat-lbl">待发送码数</div><div class="stat-val" id="adm-unused">—</div></div>
     <div class="stat-card"><div class="stat-lbl">分享次数</div><div class="stat-val" id="adm-shares">0</div></div>
   </div>
   <div class="admin-section-title" style="margin-bottom:10px">宫廷职位结果分布</div>
@@ -2118,6 +2160,7 @@ function normalizeCode(v){
       <button class="code-gen-btn" id="btn-copy-codes">复制全部</button>
     </div>
     <div class="codes-list" id="adm-codes-list">点击"批量生成"创建解锁码</div>
+    <button class="code-gen-btn" id="btn-next-code" style="width:100%;margin-top:8px;background:var(--zhu);font-size:14px;padding:12px">📋 取一个待发码（有订单时点这个）</button>
     <button class="code-gen-btn" id="btn-copy-template" style="width:100%;margin-top:8px;background:var(--zhu)">📋 复制小红书发货模板</button>
   </div>
   <div class="code-gen-section" style="padding-top:0">
