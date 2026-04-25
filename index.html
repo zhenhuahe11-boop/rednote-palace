@@ -1590,16 +1590,6 @@ document.addEventListener('DOMContentLoaded',function(){
     var err = document.getElementById('pw-code-err');
     if(v.length < 6){ err.textContent = '请输入完整的校验码'; return; }
 
-    // 先检查是否是管理员预置码（本地验证）
-    var isAdminCode = adminCodes.indexOf(v) !== -1;
-    if(!isAdminCode){
-      err.textContent = '校验码无效，请检查后重试';
-      document.getElementById('pw-code-input').style.borderColor = 'rgba(192,57,43,0.5)';
-      setTimeout(function(){ document.getElementById('pw-code-input').style.borderColor = ''; }, 2000);
-      return;
-    }
-
-    // 有效码 → 服务器验证一机一码
     var btn = document.getElementById('btn-unlock');
     btn.textContent = '验证中…';
     btn.disabled = true;
@@ -1608,6 +1598,8 @@ document.addEventListener('DOMContentLoaded',function(){
     try{
       var result = await verifyCodeOnServer(v);
       if(result.status === 'ok'){
+        // 同步到本地列表（方便后续重复使用）
+        if(adminCodes.indexOf(v)===-1){ adminCodes.push(v); saveAdminCodes(); }
         doUnlock();
       } else {
         err.textContent = result.msg || '验证失败，请稍后重试';
